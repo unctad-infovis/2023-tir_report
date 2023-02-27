@@ -20,6 +20,7 @@ function Figure1() {
         y: e
       })),
       dashStyle: (i === 2) ? 'ShortDash' : 'Solid',
+      lineWidth: (i === 2) ? 3 : 5,
       name: el.Name,
       yAxis: (i === 2) ? 1 : 0
     });

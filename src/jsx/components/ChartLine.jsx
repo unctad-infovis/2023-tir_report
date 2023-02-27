@@ -417,7 +417,7 @@ LineChart.propTypes = {
 
 LineChart.defaultProps = {
   allow_decimals: true,
-  line_width: 5,
+  line_width: 3,
   note: false,
   show_first_label: true,
   subtitle: false,
