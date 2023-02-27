@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 // Load helpers.
 import CSVtoJSON from './helpers/CSVtoJSON.js';
-import ChartStackedLine from './components/ChartStackedLine.jsx';
+import ChartStackedColumn from './components/ChartStackedColumn.jsx';
 
 import '../styles/styles.less';
 
@@ -10,22 +10,13 @@ function Figure2() {
   // Data states.
   const [dataFigure, setDataFigure] = useState(false);
 
-  const cleanData = (data) => data.map((el, i) => {
-    const labels = Object.keys(el).filter(val => val !== 'Name').map(val => parseInt(val, 10));
+  const cleanData = (data) => data.map((el) => {
+    // const labels = Object.keys(el).filter(val => val !== 'name').map(val => parseInt(val, 10));
     const values = Object.values(el).map(val => (parseFloat(val))).filter(val => !Number.isNaN(val));
 
     return ({
-      data: values.map((e, j) => ({
-        x: labels[j],
-        y: e
-      })),
-      zoneAxis: 'x',
-      zones: [{
-        value: 2022
-      }, {
-        fillColor: (i === 1) ? 'rgba(114, 191, 68, 0.4)' : 'rgba(0, 158, 219, 0.4)'
-      }],
-      name: el.Name
+      data: values,
+      name: el.name
     });
   });
 
@@ -48,15 +39,15 @@ function Figure2() {
   return (
     <div className="app">
       {dataFigure && (
-      <ChartStackedLine
+      <ChartStackedColumn
         data={dataFigure}
         data_decimals={0}
         idx="2"
         note=""
-        source=""
-        subtitle=""
+        source="UNCTAD based on various estimates. "
+        subtitle="Market size estimates of frontier technologies, billion USD"
         suffix=""
-        title=""
+        title="Value of frontier technologies is expected to grow in the 20th century"
         ylabel=""
       />
       )}

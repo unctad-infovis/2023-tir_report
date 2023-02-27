@@ -9,6 +9,7 @@ import { useIsVisible } from 'react-is-visible';
 import Highcharts from 'highcharts';
 import highchartsAccessibility from 'highcharts/modules/accessibility';
 import highchartsExporting from 'highcharts/modules/exporting';
+import streamGraph from 'highcharts/modules/streamgraph';
 import highchartsExportData from 'highcharts/modules/export-data';
 
 // Load helpers.
@@ -18,6 +19,7 @@ import formatNr from '../helpers/FormatNr.js';
 highchartsAccessibility(Highcharts);
 highchartsExporting(Highcharts);
 highchartsExportData(Highcharts);
+streamGraph(Highcharts);
 
 Highcharts.setOptions({
   lang: {
@@ -44,7 +46,7 @@ Highcharts.SVGRenderer.prototype.symbols.download = (x, y, w, h) => {
   return path;
 };
 
-function StackedLineChart({
+function StackedColumnChart({
   data, data_decimals, idx, note, source, subtitle, title, xlabel, ylabel, ymax, ymin
 }) {
   const chartRef = useRef();
@@ -61,6 +63,7 @@ function StackedLineChart({
           fontSize: '14px'
         },
         text: `<em>Source:</em> ${source} ${note ? (`<br /><em>Note:</em> <span>${note}</span>`) : ''}`,
+        useHTML: true,
         verticalAlign: 'bottom',
         x: 0
       },
@@ -98,14 +101,14 @@ function StackedLineChart({
           fontFamily: 'Roboto',
           fontWeight: 400
         },
-        type: 'area'
+        type: 'column'
       },
-      colors: ['#009edb', '#72bf44'],
+      colors: ['#009edb', '#72bf44', '#a066aa', '#aaa096'],
       credits: {
         enabled: false
       },
       exporting: {
-        filename: '2022-population-unctad',
+        filename: '2023-figure2-unctad',
         buttons: {
           contextButton: {
             menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'downloadPDF', 'separator', 'downloadCSV'],
@@ -129,7 +132,7 @@ function StackedLineChart({
         verticalAlign: 'top'
       },
       plotOptions: {
-        area: {
+        column: {
           animation: {
             duration: 3000,
           },
@@ -229,7 +232,7 @@ function StackedLineChart({
           fontWeight: 700
         },
         text: title,
-        widthAdjust: -130,
+        widthAdjust: -160,
         x: 100,
       },
       tooltip: {
@@ -257,7 +260,7 @@ function StackedLineChart({
           description: xlabel
         },
         allowDecimals: false,
-        categories: data[0].labels,
+        categories: [2020, 2030],
         crosshair: {
           color: 'transparent',
           width: 1
@@ -274,48 +277,26 @@ function StackedLineChart({
         lineColor: 'transparent',
         lineWidth: 0,
         opposite: false,
-        plotLines: [{
-          color: '#aaa096',
-          label: {
-            align: 'center',
-            rotation: 0,
-            style: {
-              color: 'rgba(0, 0, 0, 0.8)',
-              fontFamily: 'Roboto',
-              fontSize: '16px',
-              fontWeight: 700,
-            },
-            text: 'Projections →',
-            verticalAlign: 'top',
-            x: 10,
-            y: 30
-          },
-          zIndex: 4,
-          value: 2022,
-          width: 2
-        }],
         showFirstLabel: true,
         showLastLabel: true,
         tickWidth: 0,
+        type: 'category',
         title: {
           text: null
         }
       },
       yAxis: {
         accessibility: {
-          description: 'Index'
+          description: 'Value'
         },
-        allowDecimals: true,
-        custom: {
-          allowNegativeLog: true
-        },
+        allowDecimals: false,
         gridLineColor: 'rgba(124, 112, 103, 0.2)',
         gridLineWidth: 1,
         gridLineDashStyle: 'shortdot',
         labels: {
           formatter() {
             // eslint-disable-next-line react/no-this-in-sfc
-            return `${this.value / 1000000000}`;
+            return `${this.value}`;
           },
           rotation: 0,
           style: {
@@ -339,6 +320,7 @@ function StackedLineChart({
         }],
         showFirstLabel: false,
         showLastLabel: true,
+        tickInterval: 1000,
         title: {
           enabled: true,
           reserveSpace: true,
@@ -354,14 +336,6 @@ function StackedLineChart({
         },
         type: 'linear'
       }
-    }, (chart) => {
-      setTimeout(() => {
-        const { caption } = chart;
-        caption.styles.fontSize = 14;
-        chart.update({
-          caption
-        });
-      }, 100);
     });
     chartRef.current.querySelector(`#chartIdx${idx}`).style.opacity = 1;
   }, [data, data_decimals, idx, note, source, subtitle, title, xlabel, ylabel, ymax, ymin]);
@@ -384,7 +358,7 @@ function StackedLineChart({
   );
 }
 
-StackedLineChart.propTypes = {
+StackedColumnChart.propTypes = {
   data: PropTypes.instanceOf(Array).isRequired,
   data_decimals: PropTypes.number.isRequired,
   idx: PropTypes.string.isRequired,
@@ -398,7 +372,7 @@ StackedLineChart.propTypes = {
   ymin: PropTypes.number
 };
 
-StackedLineChart.defaultProps = {
+StackedColumnChart.defaultProps = {
   note: false,
   subtitle: false,
   xlabel: 'Year',
@@ -407,4 +381,4 @@ StackedLineChart.defaultProps = {
   ymin: undefined
 };
 
-export default StackedLineChart;
+export default StackedColumnChart;
