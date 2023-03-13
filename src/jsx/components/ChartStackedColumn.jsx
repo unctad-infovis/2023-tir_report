@@ -45,7 +45,7 @@ Highcharts.SVGRenderer.prototype.symbols.download = (x, y, w, h) => {
 };
 
 function StackedColumnChart({
-  data, data_decimals, idx, note, source, subtitle, title, xlabel, ylabel, ymax, ymin
+  data, data_decimals, idx, note, source, subtitle, suffix, title, xlabel, ylabel, ymax, ymin
 }) {
   const chartRef = useRef();
 
@@ -247,7 +247,7 @@ function StackedColumnChart({
           const rows = [];
           rows.push(values.map(point => `<div style="color: ${point[2]}"><span class="tooltip_label">${(point[0]) ? `${point[0]}: ` : ''}</span><span class="tooltip_value">${formatNr(roundNr(point[1], data_decimals))} = ${formatNr(roundNr((point[1] / total) * 100, 0))}%</span></div>`).join(''));
           // eslint-disable-next-line react/no-this-in-sfc
-          return `<div class="tooltip_container"><h3 class="tooltip_header">${xlabel} ${this.x}</h3>${rows}<br /><div><span class="tooltip_label">Total:</span> <span class="tooltip_value">${formatNr(roundNr(total, data_decimals))}</span></div></div>`;
+          return `<div class="tooltip_container"><h3 class="tooltip_header">${xlabel} ${this.x}</h3>${rows}<br /><div><span class="tooltip_label">Total:</span> <span class="tooltip_value">${formatNr(roundNr(total, data_decimals))} ${suffix}</span></div></div>`;
         },
         shadow: false,
         shared: true,
@@ -345,7 +345,7 @@ function StackedColumnChart({
       }
     });
     chartRef.current.querySelector(`#chartIdx${idx}`).style.opacity = 1;
-  }, [data, data_decimals, idx, note, source, subtitle, title, xlabel, ylabel, ymax, ymin]);
+  }, [data, data_decimals, idx, note, source, suffix, subtitle, title, xlabel, ylabel, ymax, ymin]);
 
   useEffect(() => {
     if (isVisible === true) {
@@ -372,6 +372,7 @@ StackedColumnChart.propTypes = {
   note: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   source: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
+  suffix: PropTypes.string,
   title: PropTypes.string.isRequired,
   xlabel: PropTypes.string,
   ylabel: PropTypes.string,
@@ -382,6 +383,7 @@ StackedColumnChart.propTypes = {
 StackedColumnChart.defaultProps = {
   note: false,
   subtitle: false,
+  suffix: '',
   xlabel: 'Year',
   ylabel: '',
   ymax: undefined,

@@ -270,7 +270,7 @@ function LineChart({
           // eslint-disable-next-line react/no-this-in-sfc
           const values = this.points.filter(point => point.series.name !== '').map(point => [point.series.name.split(' (')[0], point.y, point.color]);
           const rows = [];
-          rows.push(values.map(point => `<div><span class="tooltip_label" style="color: ${point[2]}">${(point[0]) ? `${point[0]}: ` : ''}</span><span class="tooltip_value">${roundNr(point[1], 0).toLocaleString('en-US')}${suffix}</span></div>`).join(''));
+          rows.push(values.map((point, i) => `<div><span class="tooltip_label" style="color: ${point[2]}">${(point[0]) ? `${point[0]}: ` : ''}</span><span class="tooltip_value">${roundNr(point[1], (i === 2) ? 1 : 0).toLocaleString('en-US')} ${suffix[i]}</span></div>`).join(''));
           // eslint-disable-next-line react/no-this-in-sfc
           return `<div class="tooltip_container"><h3 class="tooltip_header">Year ${(new Date(this.x)).getFullYear()}</h3>${rows}</div>`;
         },
@@ -298,6 +298,45 @@ function LineChart({
         lineColor: '#ccc',
         lineWidth: 0,
         opposite: false,
+        plotLines: [{
+          color: '#aaa096',
+          label: {
+            align: 'left',
+            rotation: 0,
+            style: {
+              color: 'rgba(0, 0, 0, 0.8)',
+              fontFamily: 'Roboto',
+              fontSize: '14px',
+              fontWeight: 700,
+            },
+            text: 'The industrial revolution',
+            verticalAlign: 'top',
+            x: 5,
+            y: 30
+          },
+          zIndex: 4,
+          value: Date.UTC(parseInt(1908, 10), 0, 1),
+          width: 1
+        }, {
+          color: '#aaa096',
+          label: {
+            align: 'left',
+            rotation: 0,
+            style: {
+              color: 'rgba(0, 0, 0, 0.8)',
+              fontFamily: 'Roboto',
+              fontSize: '14px',
+              fontWeight: 700,
+            },
+            text: 'Age of ICT',
+            verticalAlign: 'top',
+            x: 5,
+            y: 30
+          },
+          zIndex: 4,
+          value: Date.UTC(parseInt(1971, 10), 0, 1),
+          width: 1
+        }],
         showLastLabel: true,
         tickLength: 5,
         tickWidth: 1,
@@ -415,7 +454,7 @@ LineChart.propTypes = {
   show_first_label: PropTypes.bool,
   source: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
-  suffix: PropTypes.string,
+  suffix: PropTypes.instanceOf(Array),
   title: PropTypes.string.isRequired
 };
 
@@ -425,7 +464,7 @@ LineChart.defaultProps = {
   note: false,
   show_first_label: true,
   subtitle: false,
-  suffix: ''
+  suffix: ['USD', 'USD', 'tonnes']
 };
 
 export default LineChart;

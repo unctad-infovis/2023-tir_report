@@ -16,6 +16,9 @@ function Figure2() {
 
     return ({
       data: values,
+      label: {
+        enabled: false
+      },
       name: el.Name
     });
   });
@@ -46,7 +49,7 @@ function Figure2() {
         note=""
         source="UNCTAD based on various estimates."
         subtitle="Market size estimates of frontier technologies, billion USD"
-        suffix=""
+        suffix="billion USD"
         title="Value of frontier technologies is expected to boom in the 21th century"
         ylabel=""
         ymax={11000}

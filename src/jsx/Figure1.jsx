@@ -20,6 +20,9 @@ function Figure1() {
         y: e
       })),
       dashStyle: (i === 2) ? 'ShortDash' : 'Solid',
+      label: {
+        enabled: false
+      },
       lineWidth: (i === 2) ? 3 : 5,
       name: el.Name,
       yAxis: (i === 2) ? 1 : 0
@@ -51,7 +54,6 @@ function Figure1() {
         note="For this graph, the &quot;industrialized economies&quot; are Western European countries and Australia, Canada, New Zealand, the United States and Japan."
         source="UNCTAD, based on data from Our World in Data and the Maddison Project Database, version 2018, Bolt et al. (2018), Perez (2002), and Schwab (2013)."
         subtitle="Real GDP per capita versus CO2 per capita"
-        suffix=""
         title="Now is the time to close the green tech gap"
         ylabel=""
       />

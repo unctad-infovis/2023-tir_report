@@ -14,8 +14,11 @@ function Figure3() {
     // const labels = Object.keys(el).filter(val => val !== 'name').map(val => parseInt(val, 10));
     const values = Object.values(el).map(val => (parseFloat(val))).filter(val => !Number.isNaN(val));
     return ({
-      color: (i < 30) ? 'rgba(0, 158, 219, 0.5)' : 'rgba(114, 191, 68, 0.5)',
+      color: (i < 30) ? 'rgba(0, 158, 219, 0.4)' : 'rgba(114, 191, 68, 0.4)',
       data: values,
+      label: {
+        enabled: false
+      },
       name: el.Name,
       shadow: false,
       showInLegend: false
