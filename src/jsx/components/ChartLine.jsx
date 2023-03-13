@@ -329,11 +329,13 @@ function LineChart({
         },
         lineColor: 'transparent',
         lineWidth: 0,
-        min: 0,
         max: 60000,
+        min: 0,
         opposite: false,
         showFirstLabel: show_first_label,
         showLastLabel: true,
+        tickAmount: 4,
+        tickInterval: 10000,
         title: {
           enabled: true,
           reserveSpace: true,
@@ -367,6 +369,8 @@ function LineChart({
         opposite: true,
         showFirstLabel: show_first_label,
         showLastLabel: true,
+        tickAmount: 4,
+        tickInterval: 1,
         title: {
           enabled: true,
           reserveSpace: true,
@@ -416,7 +420,7 @@ LineChart.propTypes = {
 };
 
 LineChart.defaultProps = {
-  allow_decimals: true,
+  allow_decimals: false,
   line_width: 3,
   note: false,
   show_first_label: true,

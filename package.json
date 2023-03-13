@@ -45,6 +45,7 @@
   "dependencies": {
     "highcharts": "^10.3.3",
     "intersection-observer": "^0.12.2",
-    "react-is-visible": "^1.2.0"
+    "react-is-visible": "^1.2.0",
+    "scroll-into-view": "^1.16.2"
   }
 }
