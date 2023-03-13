@@ -25,7 +25,7 @@ function Quote({
       {(isVisible) && (
       <div className="quote_container">
         <div className="quote_element quote_mark">
-          <img src={`${window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2022-rmt_report/' : './'}assets/img/icons/2022-rmt_report_quote.png`} alt="Quote icon" />
+          <img src={`${window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2023-tir_report/' : './'}assets/img/icons/2023-tir_report_quote.png`} alt="Quote icon" />
         </div>
         <div className="quote_element quote_text_upper">
           {first_line}
