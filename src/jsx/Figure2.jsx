@@ -49,6 +49,8 @@ function Figure2() {
         suffix=""
         title="Value of frontier technologies is expected to grow in the 20th century"
         ylabel=""
+        ymax={11000}
+        ytick_interval={2000}
       />
       )}
     </div>

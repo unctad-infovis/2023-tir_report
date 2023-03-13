@@ -320,7 +320,16 @@ function StackedColumnChart({
         }],
         showFirstLabel: false,
         showLastLabel: true,
-        tickInterval: 1000,
+        stackLabels: {
+          enabled: true,
+          style: {
+            color: 'rgba(0, 0, 0, 0.8)',
+            fontFamily: 'Roboto',
+            fontSize: '16px',
+            fontWeight: 600
+          }
+        },
+        tickInterval: 2000,
         title: {
           enabled: true,
           reserveSpace: true,
