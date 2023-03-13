@@ -101,7 +101,7 @@ function Footer() {
               </li>
             </ul>
             <h4><a href="#report">Download the report</a></h4>
-            <div><a href="#report"><img src={`${window.location.href.includes('unctad') ? 'https://storage.unctad.org/2023-tir_report/' : './'}assets/img/2023-tir_report_cover.png`} alt="TIR 2023 Cover" /></a></div>
+            <div><a href="#report"><img src={`${window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2023-tir_report/' : './'}assets/img/2023-tir_report_cover.png`} alt="TIR 2023 Cover" /></a></div>
           </div>
         </div>
       </div>
