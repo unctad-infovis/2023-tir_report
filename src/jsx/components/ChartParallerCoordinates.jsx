@@ -1,4 +1,6 @@
-import React, { useEffect, useCallback, useRef } from 'react';
+import React, {
+  useEffect, useCallback, useRef, memo
+} from 'react';
 import PropTypes from 'prop-types';
 
 // https://www.npmjs.com/package/react-is-visible
@@ -9,15 +11,19 @@ import { useIsVisible } from 'react-is-visible';
 import Highcharts from 'highcharts';
 import highchartsAccessibility from 'highcharts/modules/accessibility';
 import highchartsExporting from 'highcharts/modules/exporting';
+import HighchartsParallelCoordinates from 'highcharts/modules/parallel-coordinates';
+import highchartsSeriesLabel from 'highcharts/modules/series-label';
 import highchartsExportData from 'highcharts/modules/export-data';
 
 // Load helpers.
-import roundNr from '../helpers/RoundNr.js';
-import formatNr from '../helpers/FormatNr.js';
+// import roundNr from '../helpers/RoundNr.js';
+// import formatNr from '../helpers/FormatNr.js';
 
 highchartsAccessibility(Highcharts);
 highchartsExporting(Highcharts);
 highchartsExportData(Highcharts);
+HighchartsParallelCoordinates(Highcharts);
+highchartsSeriesLabel(Highcharts);
 
 Highcharts.setOptions({
   lang: {
@@ -44,14 +50,25 @@ Highcharts.SVGRenderer.prototype.symbols.download = (x, y, w, h) => {
   return path;
 };
 
-function StackedColumnChart({
-  data, data_decimals, idx, note, source, subtitle, title, xlabel, ylabel, ymax, ymin
+function ParallerCoordinatesChart({
+  data, idx, note, source, subtitle, title, xlabel
 }) {
   const chartRef = useRef();
 
-  const chartHeight = 650;
+  const chartHeight = 600;
   const isVisible = useIsVisible(chartRef, { once: true });
   const createChart = useCallback(() => {
+    data.push({
+      color: 'rgba(0, 158, 219, 1)',
+      data: [],
+      lineWidth: 3,
+      name: 'Industrialised economies'
+    }, {
+      color: 'rgba(114, 191, 68, 1)',
+      data: [],
+      lineWidth: 3,
+      name: 'Rest of the world'
+    });
     Highcharts.chart(`chartIdx${idx}`, {
       caption: {
         align: 'left',
@@ -70,9 +87,18 @@ function StackedColumnChart({
           load() {
             // eslint-disable-next-line react/no-this-in-sfc
             this.renderer.image('https://unctad.org/sites/default/files/2022-11/unctad_logo.svg', 5, 15, 80, 100).add();
+          },
+          render() {
+            // eslint-disable-next-line react/no-this-in-sfc
+            this.legend.allItems = this.legend.allItems.slice(0, 2);
           }
         },
         height: chartHeight,
+        parallelCoordinates: true,
+        parallelAxes: {
+          lineColor: 'rgba(0, 0, 0, 0.3)',
+          lineWidth: 2
+        },
         resetZoomButton: {
           theme: {
             fill: '#fff',
@@ -99,9 +125,9 @@ function StackedColumnChart({
           fontFamily: 'Roboto',
           fontWeight: 400
         },
-        type: 'column'
+        type: 'spline'
       },
-      colors: ['#009edb', '#72bf44', '#a066aa', '#aaa096'],
+      colors: ['rgba(0, 158, 219, 0.5)'],
       credits: {
         enabled: false
       },
@@ -126,39 +152,28 @@ function StackedColumnChart({
           fontWeight: 400
         },
         layout: 'horizontal',
-        margin: 0,
+        margin: 20,
         verticalAlign: 'top'
       },
       plotOptions: {
-        column: {
-          animation: {
-            duration: 3000,
-          },
+        spline: {
+          animation: false,
           cursor: 'pointer',
           dataLabels: {
             enabled: false,
-            formatter() {
-              // eslint-disable-next-line react/no-this-in-sfc
-              return `<div style="color: ${this.color}">${roundNr(this.y, data_decimals)}</div>`;
-            },
-            style: {
-              color: 'rgba(0, 0, 0, 0.8)',
-              fontFamily: 'Roboto',
-              fontSize: '22px',
-              fontWeight: 400,
-              textOutline: '3px solid #fff'
-            }
           },
           events: {
             legendItemClick() {
               return false;
             },
             mouseOver() {
+              // eslint-disable-next-line react/no-this-in-sfc
+              this.group.toFront();
               return false;
             }
           },
           selected: true,
-          lineWidth: 0,
+          lineWidth: 1,
           marker: {
             enabled: false,
             radius: 0,
@@ -171,7 +186,6 @@ function StackedColumnChart({
             },
             symbol: 'circle'
           },
-          stacking: 'normal',
           states: {
             hover: {
               halo: {
@@ -223,7 +237,7 @@ function StackedColumnChart({
       },
       title: {
         align: 'left',
-        margin: 40,
+        margin: 10,
         style: {
           color: '#000',
           fontSize: '30px',
@@ -239,18 +253,8 @@ function StackedColumnChart({
         borderRadius: 0,
         borderWidth: 1,
         crosshairs: true,
-        formatter() {
-          // eslint-disable-next-line react/no-this-in-sfc
-          const values = this.points.filter(point => point.series.name !== '').map(point => [point.series.name.split(' (')[0], point.y, point.color]);
-          // eslint-disable-next-line react/no-this-in-sfc
-          const total = this.points.reduce((acc, val) => acc + val.y, 0);
-          const rows = [];
-          rows.push(values.map(point => `<div style="color: ${point[2]}"><span class="tooltip_label">${(point[0]) ? `${point[0]}: ` : ''}</span><span class="tooltip_value">${formatNr(roundNr(point[1], data_decimals))} = ${formatNr(roundNr((point[1] / total) * 100, 0))}%</span></div>`).join(''));
-          // eslint-disable-next-line react/no-this-in-sfc
-          return `<div class="tooltip_container"><h3 class="tooltip_header">${xlabel} ${this.x}</h3>${rows}<br /><div><span class="tooltip_label">Total:</span> <span class="tooltip_value">${formatNr(roundNr(total, data_decimals))}</span></div></div>`;
-        },
         shadow: false,
-        shared: true,
+        shared: false,
         useHTML: true
       },
       xAxis: {
@@ -258,7 +262,13 @@ function StackedColumnChart({
           description: xlabel
         },
         allowDecimals: false,
-        categories: [2020, 2030],
+        categories: [
+          'ICT rank',
+          'Skills rank',
+          'R&D rank',
+          'Industry rank',
+          'Finance rank',
+        ],
         crosshair: {
           color: 'transparent',
           width: 1
@@ -268,13 +278,13 @@ function StackedColumnChart({
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
             fontFamily: 'Roboto',
-            fontSize: '16px',
+            fontSize: '14px',
             fontWeight: 400
           }
         },
         lineColor: 'transparent',
-        lineWidth: 0,
-        opposite: false,
+        lineWidth: 1,
+        opposite: true,
         showFirstLabel: true,
         showLastLabel: true,
         tickWidth: 0,
@@ -283,69 +293,100 @@ function StackedColumnChart({
           text: null
         }
       },
-      yAxis: {
-        accessibility: {
-          description: 'Value'
-        },
-        allowDecimals: false,
-        gridLineColor: 'rgba(124, 112, 103, 0.2)',
-        gridLineWidth: 1,
-        gridLineDashStyle: 'shortdot',
+      yAxis: [{
         labels: {
-          formatter() {
-            // eslint-disable-next-line react/no-this-in-sfc
-            return `${this.value}`;
-          },
           rotation: 0,
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
             fontFamily: 'Roboto',
-            fontSize: '16px',
+            fontSize: '14px',
             fontWeight: 400
           }
         },
-        endOnTick: false,
-        lineColor: 'transparent',
-        lineWidth: 0,
-        max: ymax,
-        min: ymin,
-        opposite: false,
-        startOnTick: false,
-        plotLines: [{
-          color: 'rgba(124, 112, 103, 0.6)',
-          value: 0,
-          width: 1
-        }],
+        max: 166,
+        min: 1,
+        reversed: true,
         showFirstLabel: false,
-        showLastLabel: true,
-        stackLabels: {
-          enabled: true,
-          style: {
-            color: 'rgba(0, 0, 0, 0.8)',
-            fontFamily: 'Roboto',
-            fontSize: '16px',
-            fontWeight: 600
-          }
-        },
-        tickInterval: 2000,
-        title: {
-          enabled: true,
-          reserveSpace: true,
+        showLastLabel: false,
+        startOnTick: false,
+        tickAmount: 7,
+        type: 'linear'
+      }, {
+        labels: {
           rotation: 0,
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
             fontFamily: 'Roboto',
-            fontSize: '16px',
+            fontSize: '14px',
             fontWeight: 400
-          },
-          text: ylabel,
-          verticalAlign: 'top'
+          }
         },
+        max: 166,
+        min: 1,
+        reversed: true,
+        showFirstLabel: false,
+        showLastLabel: false,
+        startOnTick: false,
+        tickAmount: 7,
         type: 'linear'
-      }
+      }, {
+        labels: {
+          rotation: 0,
+          style: {
+            color: 'rgba(0, 0, 0, 0.8)',
+            fontFamily: 'Roboto',
+            fontSize: '14px',
+            fontWeight: 400
+          }
+        },
+        max: 160,
+        min: 1,
+        reversed: true,
+        showFirstLabel: false,
+        showLastLabel: false,
+        startOnTick: false,
+        tickAmount: 7,
+        type: 'linear'
+      }, {
+        labels: {
+          rotation: 0,
+          style: {
+            color: 'rgba(0, 0, 0, 0.8)',
+            fontFamily: 'Roboto',
+            fontSize: '14px',
+            fontWeight: 400
+          }
+        },
+        max: 166,
+        min: 1,
+        reversed: true,
+        showFirstLabel: false,
+        showLastLabel: false,
+        startOnTick: false,
+        tickAmount: 7,
+        type: 'linear'
+      }, {
+        labels: {
+          rotation: 0,
+          style: {
+            color: 'rgba(0, 0, 0, 0.8)',
+            fontFamily: 'Roboto',
+            fontSize: '14px',
+            fontWeight: 400
+          }
+        },
+        max: 166,
+        min: 1,
+        reversed: true,
+        showFirstLabel: false,
+        showLastLabel: false,
+        startOnTick: false,
+        tickAmount: 7,
+        type: 'linear'
+      }]
     });
     chartRef.current.querySelector(`#chartIdx${idx}`).style.opacity = 1;
-  }, [data, data_decimals, idx, note, source, subtitle, title, xlabel, ylabel, ymax, ymin]);
+  }, [data, idx, note, source, subtitle, title, xlabel]);
 
   useEffect(() => {
     if (isVisible === true) {
@@ -365,27 +406,20 @@ function StackedColumnChart({
   );
 }
 
-StackedColumnChart.propTypes = {
+ParallerCoordinatesChart.propTypes = {
   data: PropTypes.instanceOf(Array).isRequired,
-  data_decimals: PropTypes.number.isRequired,
   idx: PropTypes.string.isRequired,
   note: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   source: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   title: PropTypes.string.isRequired,
   xlabel: PropTypes.string,
-  ylabel: PropTypes.string,
-  ymax: PropTypes.number,
-  ymin: PropTypes.number
 };
 
-StackedColumnChart.defaultProps = {
+ParallerCoordinatesChart.defaultProps = {
   note: false,
   subtitle: false,
-  xlabel: 'Year',
-  ylabel: '',
-  ymax: undefined,
-  ymin: undefined
+  xlabel: 'Year'
 };
 
-export default StackedColumnChart;
+export default memo(ParallerCoordinatesChart);

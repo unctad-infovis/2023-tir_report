@@ -76,6 +76,7 @@ module.exports = {
         { from: 'assets/vid/', to: '../public/assets/vid/', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }},
         { from: 'assets/data/2023-tir_report_figure1 - data.csv', to: '../public/assets/data/2023-tir_report_figure1.csv', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }},
         { from: 'assets/data/2023-tir_report_figure2 - data.csv', to: '../public/assets/data/2023-tir_report_figure2.csv', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }},
+        { from: 'assets/data/2023-tir_report_figure3 - data.csv', to: '../public/assets/data/2023-tir_report_figure3.csv', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }},
         { from: 'src/font/', to: '../public/font/', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }},
         { from: './favicon.png', to: '../public', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }}
       ]

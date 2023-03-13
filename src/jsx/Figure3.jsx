@@ -2,26 +2,28 @@ import React, { useState, useEffect } from 'react';
 
 // Load helpers.
 import CSVtoJSON from './helpers/CSVtoJSON.js';
-import ChartStackedColumn from './components/ChartStackedColumn.jsx';
+import ChartParallerCoordinates from './components/ChartParallerCoordinates.jsx';
 
 import '../styles/styles.less';
 
-function Figure2() {
+function Figure3() {
   // Data states.
   const [dataFigure, setDataFigure] = useState(false);
 
-  const cleanData = (data) => data.map((el) => {
+  const cleanData = (data) => data.map((el, i) => {
     // const labels = Object.keys(el).filter(val => val !== 'name').map(val => parseInt(val, 10));
     const values = Object.values(el).map(val => (parseFloat(val))).filter(val => !Number.isNaN(val));
-
     return ({
+      color: (i < 30) ? 'rgba(0, 158, 219, 0.5)' : 'rgba(114, 191, 68, 0.5)',
       data: values,
-      name: el.Name
+      name: el.Name,
+      shadow: false,
+      showInLegend: false
     });
   });
 
   useEffect(() => {
-    const data_file = `${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2023-tir_report/' : './'}assets/data/2023-tir_report_figure2.csv`;
+    const data_file = `${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2023-tir_report/' : './'}assets/data/2023-tir_report_figure3.csv`;
     try {
       fetch(data_file)
         .then((response) => {
@@ -39,22 +41,20 @@ function Figure2() {
   return (
     <div className="app">
       {dataFigure && (
-      <ChartStackedColumn
+      <ChartParallerCoordinates
         data={dataFigure}
         data_decimals={0}
-        idx="2"
+        idx="3"
         note=""
-        source="UNCTAD based on various estimates."
-        subtitle="Market size estimates of frontier technologies, billion USD"
+        source="Source"
+        subtitle="The index"
         suffix=""
-        title="Value of frontier technologies is expected to boom in the 21th century"
+        title="Paraller coordinates and things and stuff"
         ylabel=""
-        ymax={11000}
-        ytick_interval={2000}
       />
       )}
     </div>
   );
 }
 
-export default Figure2;
+export default Figure3;

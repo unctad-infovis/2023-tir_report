@@ -18,6 +18,8 @@ import Footer from './components/Footer.jsx';
 
 import Figure1 from './Figure1.jsx';
 import Figure2 from './Figure2.jsx';
+import Figure3 from './Figure3.jsx';
+import Figure4 from './Figure4.jsx';
 
 // const appID = '#app-root-2023-tir_report';
 
@@ -160,7 +162,7 @@ function App() {
           </div>
         </div>
         <div className="right_column">
-          <Quote author_name="Rebeca Grynspan" author_title="UNCTAD Secretary-General" first_line="First line" second_line="Missing the green technological wave because of insufficient policy attention or lack of targeted investment would have long-lasting negative implications." />
+          <Quote author_name="Rebeca Grynspan" author_title="UNCTAD Secretary-General" first_line="We are at the beginning of a green technological revolution" second_line="Missing this wave because of insufficient policy attention or lack of targeted investment would have long-lasting negative implications." />
         </div>
       </div>
       <div className="section_wrapper">
@@ -256,7 +258,7 @@ function App() {
               </div>
             </div>
             <div className="right_column">
-              Visualisation of the data
+              <Figure3 />
             </div>
           </div>
         </div>
@@ -309,10 +311,10 @@ function App() {
               </div>
             </div>
             <div className="right_column">
-              Graph highlighting Philippines and Viet Nam
+              <Figure4 />
             </div>
           </div>
-          <Recommendations headline="UNCTAD calls for" recommendation_list={['Proactively build capacities to harness frontier technologies. Otherwise, the green technological revolution will not close but widen global inequalities.', 'Urgently boost technical skills and scale up investments in ICT infrastructure, addressing the connectivity gaps between small and large firms and between urban and rural regions.', 'Invest in more complex and greener sectors. Priority sectors can be supported through policy instruments such as clusters, smart specialization initiatives and demonstration projects.']} />
+          <Recommendations headline="UNCTAD calls on governments in developing countries to" recommendation_list={['Invest in more complex and greener sectors through policy instruments such as clusters, smart specialization initiatives and demonstration projects. ', 'Boost technical skills, scale up investments in ICT infrastructure and address connectivity gaps between small and large firms and between urban and rural regions.', 'Build capacities to harness frontier technologies. Otherwise, the green technological revolution will not close but widen global inequalities.']} />
         </div>
         {/* Section 4 */}
         <div ref={section4} className="section_4_container">
@@ -359,7 +361,7 @@ function App() {
             </div>
           </div>
         </div>
-        <Recommendations headline="UNCTAD calls for" recommendation_list={['Governments in developing countries to align environmental, science, technology, innovation and industrial policies. Coherent policymaking across these spheres can help tackle the climate crisis, boost renewable energy and improve rural electricity access and energy security.', 'All governments to consistently implement their commitments on climate change, trade and intellectual property to facilitate the transfer of green technologies to developing countries.', 'Greater cooperation through international trade. Trade rules should permit developing countries to protect nascent green industries through tariffs, subsidies and public procurement, so they can meet local demand and reach the economies of scale needed for exports to be more competitive.', 'A global initiative to generate information on products with lower carbon footprints to inform trade rules, and a multilateral fund to stimulate green innovations.']} />
+        <Recommendations headline="UNCTAD calls for" recommendation_list={['Governments and the global community to ensure consistency across international agreements on trade, intellectual property and climate change to close the green tech gap.', 'Governments to align environmental, science, technology, innovation and industrial policies.', 'Greater cooperation through international trade. Trade rules should permit developing countries to protect nascent green industries through tariffs, subsidies and public procurement.', 'A global initiative to provide information on products with lower carbon footprints to inform trade rules. And a multilateral fund to stimulate green innovations.']} />
       </div>
       <Footer />
       <noscript>Your browser does not support JavaScript!</noscript>

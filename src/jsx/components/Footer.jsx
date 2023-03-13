@@ -15,7 +15,7 @@ function Footer() {
   return (
     <div className="footer_container">
       <h2>What do you want to do next?</h2>
-      <div className="download_button anchor_downloads"><a href="#report">Download the report</a></div>
+      <div className="download_button anchor_downloads"><a href="https://unctad.org/publication/technology-and-innovation-report-2023">Download the report</a></div>
       <div className="footer_elements">
         <div className="footer_element footer_element_1 anchor_video">
           <div className="footer_content">
@@ -100,8 +100,8 @@ function Footer() {
                 </ul>
               </li>
             </ul>
-            <h4><a href="#report">Download the report</a></h4>
-            <div><a href="#report"><img src={`${window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2023-tir_report/' : './'}assets/img/2023-tir_report_cover.png`} alt="TIR 2023 Cover" /></a></div>
+            <h4><a href="https://unctad.org/publication/technology-and-innovation-report-2023">Download the report</a></h4>
+            <div><a href="https://unctad.org/publication/technology-and-innovation-report-2023"><img src={`${window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2023-tir_report/' : './'}assets/img/2023-tir_report_cover.png`} alt="TIR 2023 Cover" /></a></div>
           </div>
         </div>
       </div>

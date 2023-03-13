@@ -1,0 +1,167 @@
+Name,ICT rank,Skills rank,R&D rank,Industry rank,Finance rank
+United States of America,11,18,2,16,2
+Sweden,6,2,16,11,18
+Singapore,7,8,17,4,17
+"Switzerland, Liechtenstein",21,13,12,5,5
+Netherlands,4,9,15,10,31
+Republic of Korea,15,26,3,9,7
+Germany,24,17,5,12,40
+Finland,22,5,21,20,30
+"China, Hong Kong SAR",9,23,29,2,1
+Belgium,13,4,23,19,48
+Canada,5,21,9,29,20
+Australia,33,1,11,57,13
+Norway,3,6,27,50,6
+Ireland,26,11,22,1,105
+France,18,24,8,17,21
+Denmark,19,7,24,24,8
+United Kingdom,20,12,6,44,12
+Luxembourg,2,16,38,37,28
+Japan,10,51,7,13,3
+Israel,37,14,19,6,60
+Spain,8,28,14,34,24
+Iceland,1,3,74,80,32
+New Zealand,12,10,42,58,9
+Austria,39,29,25,28,36
+Italy,58,34,10,25,42
+Malta,17,25,64,18,41
+Poland,28,30,30,33,84
+Slovenia,25,15,57,21,92
+Estonia,16,19,63,26,64
+Czechia,47,27,32,15,78
+Russian Federation,43,32,13,54,69
+Malaysia,30,64,28,7,16
+Portugal,35,33,31,49,29
+Cyprus,42,40,39,35,23
+China,117,92,1,8,4
+Hungary,14,43,48,14,99
+United Arab Emirates,29,50,34,32,38
+Latvia,23,22,73,30,102
+Slovakia,27,49,37,27,61
+Brazil,50,55,18,51,57
+Lithuania,31,20,59,46,100
+Croatia,41,37,60,45,70
+Bulgaria,45,52,54,36,81
+Greece,56,31,71,48,44
+Romania,32,69,33,38,122
+India,95,109,4,22,75
+Saudi Arabia,46,44,20,119,77
+Chile,62,46,40,103,19
+Thailand,40,90,46,41,10
+Serbia,51,54,58,43,89
+Kuwait,44,75,70,52,37
+Barbados,34,45,86,73,47
+Türkiye,75,48,26,77,49
+Philippines,94,79,52,3,80
+Belarus,57,35,78,53,103
+South Africa,71,77,36,67,25
+Costa Rica,63,53,88,39,67
+Ukraine,61,42,49,85,114
+Montenegro,49,39,113,81,68
+Bahrain,48,58,87,94,50
+Mexico,70,73,45,31,96
+Viet Nam,69,117,41,23,11
+Uruguay,55,47,84,63,116
+Oman,52,86,51,91,63
+Argentina,74,41,62,75,141
+Tunisia,88,61,66,42,45
+Qatar,36,115,56,115,15
+Kazakhstan,82,36,69,69,124
+Brunei Darussalam,54,38,95,97,93
+Morocco,73,113,53,55,33
+Panama,66,89,102,40,27
+Colombia,79,85,55,79,76
+Mauritius,96,57,82,74,34
+North Macedonia,64,67,94,61,73
+Iran (Islamic Republic of),78,74,35,118,62
+Bosnia and Herzegovina,60,84,89,78,71
+Lebanon,84,76,77,86,26
+Armenia,65,63,105,98,54
+Georgia,77,56,96,88,46
+Jordan,80,101,61,64,43
+Bahamas,38,72,116,114,82
+Republic of Moldova,53,97,93,70,117
+Egypt,91,66,47,90,119
+Peru,86,59,72,136,74
+Indonesia,102,107,50,47,97
+Fiji,87,78,106,89,22
+Trinidad and Tobago,59,70,131,108,91
+Albania,68,81,109,99,98
+Sri Lanka,115,82,75,83,85
+Ecuador,89,96,76,113,87
+Belize,85,80,127,132,59
+Dominican Republic,76,93,145,62,108
+Mongolia,83,68,120,149,88
+Jamaica,72,95,143,126,72
+Saint Lucia,93,65,160,104,52
+Azerbaijan,81,94,85,141,121
+Algeria,112,83,65,162,111
+Paraguay,67,105,131,133,86
+Suriname,92,62,160,110,127
+Saint Vincent and the Grenadines,90,71,160,131,83
+Bolivia (Plurinational State of),101,88,134,144,56
+El Salvador,100,125,131,59,66
+Maldives,98,60,149,158,79
+Namibia,129,111,104,66,53
+Samoa,125,91,135,127,35
+Nepal,123,126,100,112,39
+Iraq,104,100,44,164,158
+Botswana,109,102,103,128,94
+Ghana,99,122,81,107,154
+Guyana,113,119,160,87,95
+Gabon,105,98,149,76,148
+Cambodia,122,123,121,95,14
+Kyrgyzstan,107,103,119,111,113
+Guatemala,103,136,143,71,101
+Cabo Verde,97,110,160,153,51
+Bhutan,108,106,137,160,55
+Kenya,120,135,83,93,107
+Eswatini,141,114,124,72,131
+Nigeria,119,108,68,157,153
+Venezuela (Bolivarian Rep. of),121,87,111,159,110
+Lesotho,110,129,123,92,130
+Libya,151,99,97,145,104
+Honduras,118,139,109,123,58
+Nicaragua,106,116,160,122,109
+Pakistan,149,159,43,82,138
+Bangladesh,148,131,67,135,90
+United Republic of Tanzania,131,164,79,65,150
+Senegal,116,155,92,116,112
+Timor-Leste,159,104,140,60,143
+Angola,127,121,145,109,152
+Papua New Guinea,150,138,111,84,136
+Congo,136,127,137,105,149
+Myanmar,132,143,107,101,118
+Lao People's Dem. Rep.,130,134,152,56,133
+Cameroon,137,120,101,117,146
+Cote d'Ivoire,114,146,128,125,132
+Sao Tome and Principe,143,112,160,96,134
+Uganda,133,137,91,120,147
+Rwanda,134,142,99,137,126
+Burkina Faso,128,162,126,129,115
+Malawi,153,141,117,102,155
+Togo,144,130,146,134,120
+Benin,152,128,126,124,142
+Vanuatu,146,124,160,156,65
+Mali,138,165,118,100,123
+Madagascar,124,152,140,142,139
+Zambia,142,133,115,155,144
+Zimbabwe,126,140,111,148,162
+Tajikistan,160,118,140,138,151
+Djibouti,135,163,160,68,135
+Solomon Islands,147,144,160,147,106
+Mozambique,140,156,123,154,125
+Mauritania,139,160,137,150,128
+Haiti,111,153,160,146,157
+Ethiopia,162,161,80,106,137
+Comoros,157,132,160,140,145
+Guinea,154,158,149,130,156
+Burundi,161,148,149,152,129
+Yemen,165,154,90,121,164
+Gambia,145,151,149,161,159
+Sierra Leone,158,149,131,143,163
+Dem. Rep. of the Congo,155,145,131,163,161
+Sudan,156,157,99,165,160
+Afghanistan,164,150,114,151,165
+Guinea-Bissau,163,147,160,166,140
+South Sudan,166,166,160,139,166

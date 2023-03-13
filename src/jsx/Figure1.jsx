@@ -48,11 +48,11 @@ function Figure1() {
       <ChartLine
         idx="1"
         data={dataFigure}
-        note="“Core” corresponds to Western European countries and Australia, Canada, New Zealand, the United States and Japan. “Periphery” corresponds to the rest of the world"
+        note="For this graph, the &quot;industrialized economies&quot; are Western European countries and Australia, Canada, New Zealand, the United States and Japan."
         source="UNCTAD, based on data from Our World in Data and the Maddison Project Database, version 2018, Bolt et al. (2018), Perez (2002), and Schwab (2013)."
         subtitle="Real GDP per capita versus CO2 per capita"
         suffix=""
-        title="Now is the time to green GDP growth"
+        title="Now is the time to close the green tech gap"
         ylabel=""
       />
       )}
