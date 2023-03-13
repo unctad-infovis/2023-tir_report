@@ -160,7 +160,7 @@ function App() {
           </div>
         </div>
         <div className="right_column">
-          <Quote author_name="Rebeca Grynspan" author_title="UNCTAD Secretary-General" first_line="First line" second_line="Second line" />
+          <Quote author_name="Rebeca Grynspan" author_title="UNCTAD Secretary-General" first_line="First line" second_line="Missing the green technological wave because of insufficient policy attention or lack of targeted investment would have long-lasting negative implications." />
         </div>
       </div>
       <div className="section_wrapper">

@@ -52,7 +52,7 @@ function Figure1() {
         source="UNCTAD, based on data from Our World in Data and the Maddison Project Database, version 2018, Bolt et al. (2018), Perez (2002), and Schwab (2013)."
         subtitle="Real GDP per capita versus CO2 per capita"
         suffix=""
-        title="Now is the time to close the tech gap between developed and developing countries"
+        title="Now is the time to green GDP growth"
         ylabel=""
       />
       )}

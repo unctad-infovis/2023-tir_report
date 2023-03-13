@@ -47,7 +47,7 @@ function Figure2() {
         source="UNCTAD based on various estimates. "
         subtitle="Market size estimates of frontier technologies, billion USD"
         suffix=""
-        title="Value of frontier technologies is expected to grow in the 20th century"
+        title="Value of frontier technologies is expected to grow in the 21th century"
         ylabel=""
         ymax={11000}
         ytick_interval={2000}
