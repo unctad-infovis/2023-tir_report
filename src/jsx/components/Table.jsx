@@ -34,10 +34,10 @@ function Table({ columns, data, renderRowSubComponent }) {
     columns,
     data,
     initialState: {
-      pageSize: 15,
-      pageIndex: 0,
       globalFilter: '',
       hiddenColumns: [''],
+      pageIndex: 0,
+      pageSize: 10
       // sortBy: [{ id: '2023_rank', desc: false }]
     }
   }, useGlobalFilter, useSortBy, useExpanded, usePagination);
@@ -95,7 +95,7 @@ function Table({ columns, data, renderRowSubComponent }) {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {page.map((row) => {
+          {page.map((row, i) => {
             prepareRow(row);
             return (
               <React.Fragment key={row.id}>
@@ -106,7 +106,7 @@ function Table({ columns, data, renderRowSubComponent }) {
                     </td>
                   ))}
                 </tr>
-                {row.isExpanded ? (
+                {(row.isExpanded || i === 0) ? (
                   <tr>
                     <td colSpan={visibleColumns.length}>
                       {renderRowSubComponent({ row })}

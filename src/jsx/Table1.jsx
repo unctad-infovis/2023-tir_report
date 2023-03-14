@@ -19,7 +19,7 @@ function addAnnotation(text) {
 function expander(row) {
   return (
     <span {...row.getToggleRowExpandedProps()}>
-      {row.isExpanded ? '▼' : '▶'}
+      {(row.isExpanded || row.index === 0) ? '▼' : '▶'}
     </span>
   );
 }
@@ -99,7 +99,6 @@ function App() {
         2: row[columns[2]],
         3: row[columns[3]],
         4: row
-
       }));
       appRef.current.querySelector('.loading_row').style.display = 'none';
       appRef.current.querySelector('.pagination').style.display = 'block';
