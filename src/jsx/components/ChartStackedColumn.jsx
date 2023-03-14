@@ -106,14 +106,15 @@ function StackedColumnChart({
         enabled: false
       },
       exporting: {
-        filename: '2023-unctad',
         buttons: {
           contextButton: {
             menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'downloadPDF', 'separator', 'downloadCSV'],
             symbol: 'download',
             symbolFill: '#000'
           }
-        }
+        },
+        enabled: true,
+        filename: '2023-unctad'
       },
       legend: {
         align: 'right',

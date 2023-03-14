@@ -7,7 +7,7 @@ import {
 import PropTypes from 'prop-types';
 
 // Load helpers.
-import Filter from './helpers/Filter.jsx';
+import Filter from './Filter.jsx';
 
 function Table({ columns, data, renderRowSubComponent }) {
   // https://akashmittal.com/react-table-learn-filter-sort-pagination-in-10-minutes/
@@ -34,11 +34,11 @@ function Table({ columns, data, renderRowSubComponent }) {
     columns,
     data,
     initialState: {
-      pageSize: 50,
+      pageSize: 15,
       pageIndex: 0,
       globalFilter: '',
-      hiddenColumns: ['5'],
-      sortBy: [{ id: 'fund_provider', desc: false }]
+      hiddenColumns: [''],
+      // sortBy: [{ id: '2023_rank', desc: false }]
     }
   }, useGlobalFilter, useSortBy, useExpanded, usePagination);
 
@@ -153,7 +153,7 @@ function Table({ columns, data, renderRowSubComponent }) {
             setPageSize(Number(e.target.value));
           }}
         >
-          {[10, 20, 30, 40, 50].map((pages) => (
+          {[15, 30, 45, 60].map((pages) => (
             <option key={pages} value={pages}>
               Show
               {' '}

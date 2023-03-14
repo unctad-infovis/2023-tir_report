@@ -46,6 +46,8 @@
     "highcharts": "^10.3.3",
     "intersection-observer": "^0.12.2",
     "react-is-visible": "^1.2.0",
+    "react-table": "^7.8.0",
+    "regenerator-runtime": "^0.13.11",
     "scroll-into-view": "^1.16.2"
   }
 }

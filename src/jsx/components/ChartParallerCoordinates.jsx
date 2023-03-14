@@ -125,21 +125,23 @@ function ParallerCoordinatesChart({
           fontFamily: 'Roboto',
           fontWeight: 400
         },
-        type: 'spline'
+        type: 'spline',
+        zoomType: 'y'
       },
       colors: ['rgba(0, 158, 219, 0.5)'],
       credits: {
         enabled: false
       },
       exporting: {
-        filename: '2023-unctad',
         buttons: {
           contextButton: {
             menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'downloadPDF', 'separator', 'downloadCSV'],
             symbol: 'download',
             symbolFill: '#000'
           }
-        }
+        },
+        enabled: true,
+        filename: '2023-unctad'
       },
       legend: {
         align: 'right',

@@ -20,6 +20,7 @@ import Figure1 from './Figure1.jsx';
 import Figure2 from './Figure2.jsx';
 import Figure3 from './Figure3.jsx';
 import Figure4 from './Figure4.jsx';
+import Table1 from './Table1.jsx';
 
 // const appID = '#app-root-2023-tir_report';
 
@@ -357,7 +358,7 @@ function App() {
               </div>
             </div>
             <div className="right_column">
-              Table of the data showing all values
+              <Table1 />
             </div>
           </div>
         </div>
