@@ -110,17 +110,19 @@ function App() {
 
   return (
     <div className="app" ref={appRef}>
-      <h3>Frontier tech readiness index</h3>
-      <p>A ranking of 166 countries’ readiness to use frontier technologies</p>
-      <Table
-        columns={columnData}
-        data={rowData}
-        renderRowSubComponent={renderRowSubComponent}
-      />
-      <div className="caption">
-        <div>
-          <em>Source: UNCTAD</em>
-          <span />
+      <div className="table_container">
+        <h3>Frontier tech readiness index</h3>
+        <p>A ranking of 166 countries’ readiness to use frontier technologies</p>
+        <Table
+          columns={columnData}
+          data={rowData}
+          renderRowSubComponent={renderRowSubComponent}
+        />
+        <div className="caption">
+          <div>
+            <em>Source: UNCTAD</em>
+            <span />
+          </div>
         </div>
       </div>
       <noscript>Your browser does not support JavaScript!</noscript>
