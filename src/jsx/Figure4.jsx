@@ -58,10 +58,10 @@ function Figure3() {
         data_decimals={0}
         idx="4"
         note=""
-        source="Source"
-        subtitle="The index"
+        source="UNCTAD"
+        subtitle="Countries showing stronger capabilities than their per capita GDPs suggest"
         suffix=""
-        title="Philippines and Viet Nam highlighted"
+        title="The frontier tech overperformers"
         ylabel=""
       />
       )}

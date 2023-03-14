@@ -51,10 +51,10 @@ function Figure3() {
         data_decimals={0}
         idx="3"
         note=""
-        source="Source"
-        subtitle="The index"
+        source="UNCTAD"
+        subtitle="A ranking of 166 countries’ readiness to use frontier technologies"
         suffix=""
-        title="Paraller coordinates and things and stuff"
+        title="How prepared are countries for frontier tech?"
         ylabel=""
       />
       )}

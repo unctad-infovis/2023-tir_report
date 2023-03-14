@@ -358,9 +358,6 @@ function App() {
               </div>
             </div>
             <div className="right_column">
-              <div className="content_wrapper">
-                <h3>Countries’ readiness to use, adopt and adapt frontier technologies</h3>
-              </div>
               <Table1 />
             </div>
           </div>
