@@ -110,7 +110,7 @@ function App() {
 
   return (
     <div className="app" ref={appRef}>
-      <h3>Frontier technology readiness index</h3>
+      <h3>Frontier tech readiness index</h3>
       <p>A ranking of 166 countries’ readiness to use frontier technologies</p>
       <Table
         columns={columnData}

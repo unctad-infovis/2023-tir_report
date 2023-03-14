@@ -136,7 +136,7 @@ function App() {
             <p className="ingress">
               The Technology and Innovation Report 2023 highlights the opportunities that green innovation – goods and services with smaller carbon footprints – offer developing countries to spur economic growth and enhance technological capacities.
             </p>
-            <p className="ingress">The 17 frontier technologies covered in the report such as artificial intelligence, Internet of Things and green hydrogen already represent a $1.5 trillion market, which could grow to over $9.5 trillion by 2030 – about three times the current size of the Indian economy.</p>
+            <p className="ingress">The report analyses the market size of 17 green and frontier technologies, such as artificial intelligence, the Internet of Things and electric vehicles, and their potential to create jobs.</p>
             <IsVisible once>
               {(isVisible) => (
                 <p className="ingress">
@@ -188,11 +188,9 @@ function App() {
                 <IsVisible once>
                   {(isVisible) => (
                     <p>
-                      Technologies such as artificial intelligence, Internet of Things and green hydrogen
+                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>The 17 frontier technologies covered in the report</span>
                       {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>already represent a $1.5 trillion market, which could grow to over $9.5 trillion by 2030</span>
-                      {' '}
-                      – about three times the current size of the Indian economy.
+                      such as artificial intelligence, Internet of Things and green hydrogen already represent a $1.5 trillion market, which could grow to over $9.5 trillion by 2030 – about three times the current size of the Indian economy.
                     </p>
                   )}
                 </IsVisible>
