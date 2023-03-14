@@ -136,7 +136,7 @@ function App() {
             <p className="ingress">
               The Technology and Innovation Report 2023 highlights the opportunities that green innovation – goods and services with smaller carbon footprints – offer developing countries to spur economic growth and enhance technological capacities.
             </p>
-            <p className="ingress">The report analyses the market size of 17 green and frontier technologies, such as artificial intelligence, the Internet of Things and electric vehicles, and their potential to create jobs.</p>
+            <p className="ingress">The 17 frontier technologies covered in the report such as artificial intelligence, Internet of Things and green hydrogen already represent a $1.5 trillion market, which could grow to over $9.5 trillion by 2030 – about three times the current size of the Indian economy.</p>
             <IsVisible once>
               {(isVisible) => (
                 <p className="ingress">
@@ -163,7 +163,7 @@ function App() {
           </div>
         </div>
         <div className="right_column">
-          <Quote author_name="Rebeca Grynspan" author_title="UNCTAD Secretary-General" first_line="We are at the beginning of a green technological revolution" second_line="Missing this wave because of insufficient policy attention or lack of targeted investment would have long-lasting negative implications." />
+          <Quote author_name="Rebeca Grynspan" author_title="UNCTAD Secretary-General" first_line="We are at the beginning of a green technological revolution" second_line="Developing countries should act now to catch this wave and grow stronger economies while tackling climate change" />
         </div>
       </div>
       <div className="section_wrapper">
@@ -358,6 +358,9 @@ function App() {
               </div>
             </div>
             <div className="right_column">
+              <div className="content_wrapper">
+                <h3>Countries’ readiness to use, adopt and adapt frontier technologies</h3>
+              </div>
               <Table1 />
             </div>
           </div>

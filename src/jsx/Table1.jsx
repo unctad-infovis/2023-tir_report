@@ -117,11 +117,8 @@ function App() {
       />
       <div className="caption">
         <div>
-          <em>Source: </em>
+          <em>Source: UNCTAD</em>
           <span />
-        </div>
-        <div>
-          <em>Notes: </em>
         </div>
       </div>
       <noscript>Your browser does not support JavaScript!</noscript>
