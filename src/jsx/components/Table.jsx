@@ -41,7 +41,6 @@ function Table({ columns, data, renderRowSubComponent }) {
       // sortBy: [{ id: '2023_rank', desc: false }]
     }
   }, useGlobalFilter, useSortBy, useExpanded, usePagination);
-
   // Render the UI for your table
   return (
     <>
@@ -95,9 +94,9 @@ function Table({ columns, data, renderRowSubComponent }) {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {page.map((row, i) => {
+          {page.map((row) => {
             prepareRow(row);
-            if (i === 0) {
+            if (row.cells[1].value === 'United States of America') {
               row.isExpanded = true;
             }
             return (
