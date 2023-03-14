@@ -153,7 +153,7 @@ function Table({ columns, data, renderRowSubComponent }) {
             setPageSize(Number(e.target.value));
           }}
         >
-          {[15, 30, 45, 60].map((pages) => (
+          {[10, 20, 30, 40, 50].map((pages) => (
             <option key={pages} value={pages}>
               Show
               {' '}

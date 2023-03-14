@@ -119,8 +119,8 @@ function App() {
         />
         <div className="caption">
           <div>
-            <em>Source: UNCTAD</em>
-            <span />
+            <em>Source: </em>
+            <span>UNCTAD</span>
           </div>
         </div>
       </div>
