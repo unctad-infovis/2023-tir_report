@@ -10,16 +10,17 @@ function Figure3() {
   // Data states.
   const [dataFigure, setDataFigure] = useState(false);
 
-  const cleanData = (data) => data.map((el, i) => {
+  const cleanData = (data) => data.map((el) => {
     // const labels = Object.keys(el).filter(val => val !== 'name').map(val => parseInt(val, 10));
     const values = Object.values(el).map(val => (parseFloat(val))).filter(val => !Number.isNaN(val));
     return ({
-      color: (i < 30) ? 'rgba(0, 158, 219, 0.4)' : 'rgba(114, 191, 68, 0.4)',
-      data: values,
+      color: (values[6] === 1) ? 'rgba(0, 158, 219, 0.4)' : 'rgba(114, 191, 68, 0.4)',
+      data: values.slice(1, 6),
       label: {
         enabled: false
       },
       name: el.Name,
+      rank: values[0],
       shadow: false,
       showInLegend: false
     });

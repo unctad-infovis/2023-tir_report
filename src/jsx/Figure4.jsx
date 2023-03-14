@@ -14,11 +14,10 @@ function Figure3() {
     // const labels = Object.keys(el).filter(val => val !== 'name').map(val => parseInt(val, 10));
     const values = Object.values(el).map(val => (parseFloat(val))).filter(val => !Number.isNaN(val));
     return ({
-      color: (el.Name === 'Viet Nam' || el.Name === 'Philippines') ? '#eb1f48' : (i < 30) ? 'rgba(0, 158, 219, 0.2)' : 'rgba(114, 191, 68, 0.2)',
-      data: values,
-      name: el.Name,
+      color: (el.Name === 'Viet Nam' || el.Name === 'India' || el.Name === 'Philippines') ? '#eb1f48' : (i < 30) ? 'rgba(0, 158, 219, 0.2)' : 'rgba(114, 191, 68, 0.2)',
+      data: values.slice(1, 6),
       label: {
-        enabled: !!((el.Name === 'Viet Nam' || el.Name === 'Philippines')),
+        enabled: !!((el.Name === 'Viet Nam' || el.Name === 'India' || el.Name === 'Philippines')),
         style: {
           color: '#eb1f48',
           cursor: 'default',
@@ -27,7 +26,9 @@ function Figure3() {
           fontWeight: 600
         }
       },
-      lineWidth: (el.Name === 'Viet Nam' || el.Name === 'Philippines') ? 3 : 1,
+      lineWidth: (el.Name === 'Viet Nam' || el.Name === 'India' || el.Name === 'Philippines') ? 3 : 1,
+      name: el.Name,
+      rank: values[0],
       shadow: false,
       showInLegend: false
     });

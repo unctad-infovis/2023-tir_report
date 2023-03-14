@@ -307,7 +307,7 @@ function LineChart({
               color: 'rgba(0, 0, 0, 0.8)',
               fontFamily: 'Roboto',
               fontSize: '14px',
-              fontWeight: 700,
+              fontWeight: 700
             },
             text: 'The industrial revolution',
             verticalAlign: 'top',
@@ -384,7 +384,7 @@ function LineChart({
             fontSize: '16px',
             fontWeight: 400
           },
-          text: 'Real GDP, US dollars',
+          text: 'Real GDP, US dollars'
         },
         type: 'linear'
       }, {
@@ -419,7 +419,7 @@ function LineChart({
             fontSize: '16px',
             fontWeight: 400
           },
-          text: 'tonnes, CO2',
+          text: 'Tonnes, CO2'
         },
         type: 'linear'
       }]

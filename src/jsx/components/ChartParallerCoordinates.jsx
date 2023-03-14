@@ -62,12 +62,12 @@ function ParallerCoordinatesChart({
       color: 'rgba(0, 158, 219, 1)',
       data: [],
       lineWidth: 3,
-      name: 'Industrialised economies'
+      name: 'Developed economies'
     }, {
       color: 'rgba(114, 191, 68, 1)',
       data: [],
       lineWidth: 3,
-      name: 'Rest of the world'
+      name: 'Developing economies'
     });
     Highcharts.chart(`chartIdx${idx}`, {
       caption: {
@@ -253,6 +253,10 @@ function ParallerCoordinatesChart({
         borderRadius: 0,
         borderWidth: 1,
         crosshairs: true,
+        formatter() {
+          // eslint-disable-next-line react/no-this-in-sfc
+          return `<div class="tooltip_container"><h3 class="tooltip_header">${this.series.name}</h3><div><span class="tooltip_label">ICT:</span> <span class="tooltip_value">${this.series.options.data[0]}</span></div><div><span class="tooltip_label">Skills:</span> <span class="tooltip_value">${this.series.options.data[1]}</span></div><div><span class="tooltip_label">R&D:</span> <span class="tooltip_value">${this.series.options.data[2]}</span></div><div><span class="tooltip_label">Industry:</span> <span class="tooltip_value">${this.series.options.data[3]}</span></div><div><span class="tooltip_label">Finance:</span> <span class="tooltip_value">${this.series.options.data[4]}</span></div><br /><div><span class="tooltip_label">Overall rank:</span> <span class="tooltip_value">${this.series.options.rank}</span></div></div>`;
+        },
         shadow: false,
         shared: false,
         useHTML: true
@@ -263,11 +267,11 @@ function ParallerCoordinatesChart({
         },
         allowDecimals: false,
         categories: [
-          'ICT rank',
-          'Skills rank',
-          'R&D rank',
-          'Industry rank',
-          'Finance rank',
+          'ICT',
+          'Skills',
+          'R&D',
+          'Industry',
+          'Finance',
         ],
         crosshair: {
           color: 'transparent',
