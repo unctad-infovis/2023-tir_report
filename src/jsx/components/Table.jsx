@@ -97,6 +97,9 @@ function Table({ columns, data, renderRowSubComponent }) {
         <tbody {...getTableBodyProps()}>
           {page.map((row, i) => {
             prepareRow(row);
+            if (i === 0) {
+              row.isExpanded = true;
+            }
             return (
               <React.Fragment key={row.id}>
                 <tr {...row.getRowProps()} className="row">
@@ -106,7 +109,7 @@ function Table({ columns, data, renderRowSubComponent }) {
                     </td>
                   ))}
                 </tr>
-                {(row.isExpanded || i === 0) ? (
+                {(row.isExpanded) ? (
                   <tr>
                     <td colSpan={visibleColumns.length}>
                       {renderRowSubComponent({ row })}

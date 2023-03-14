@@ -19,7 +19,7 @@ function addAnnotation(text) {
 function expander(row) {
   return (
     <span {...row.getToggleRowExpandedProps()}>
-      {(row.isExpanded || row.index === 0) ? '▼' : '▶'}
+      {(row.isExpanded) ? '▼' : '▶'}
     </span>
   );
 }
