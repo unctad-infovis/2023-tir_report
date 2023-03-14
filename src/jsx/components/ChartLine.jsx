@@ -221,7 +221,7 @@ function LineChart({
             }]
           },
           condition: {
-            maxWidth: 500
+            maxWidth: 450
           }
         }, {
           chartOptions: {

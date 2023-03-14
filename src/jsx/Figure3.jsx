@@ -54,7 +54,7 @@ function Figure3() {
         source="UNCTAD"
         subtitle="A ranking of 166 countries’ readiness to use frontier technologies"
         suffix=""
-        title="How prepared are countries for frontier tech?"
+        title="How prepared are countries for frontier technologies?"
         ylabel=""
       />
       )}

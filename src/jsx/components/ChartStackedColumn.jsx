@@ -204,7 +204,7 @@ function StackedColumnChart({
             }
           },
           condition: {
-            maxWidth: 500
+            maxWidth: 450
           }
         }]
       },

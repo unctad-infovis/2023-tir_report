@@ -140,9 +140,7 @@ function App() {
             <IsVisible once>
               {(isVisible) => (
                 <p className="ingress">
-                  It says
-                  {' '}
-                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>now is the time for developing countries to capture more of the value being created in this green tech revolution</span>
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>Now is the time for developing countries to capture more of the value being created in this green tech revolution</span>
                   {' '}
                   – and use it to grow their economies, make them more resilient to shocks and reduce inequalities.
                 </p>
@@ -163,7 +161,7 @@ function App() {
           </div>
         </div>
         <div className="right_column">
-          <Quote author_name="Rebeca Grynspan" author_title="UNCTAD Secretary-General" first_line="We are at the beginning of a green technological revolution" second_line="Developing countries should act now to catch this wave and grow stronger economies while tackling climate change" />
+          <Quote author_name="Rebeca Grynspan" author_title="UNCTAD Secretary-General" first_line="We are at the beginning of a green technological revolution." second_line="Developing countries should act now to catch this wave and grow stronger economies while tackling climate change." />
         </div>
       </div>
       <div className="section_wrapper">

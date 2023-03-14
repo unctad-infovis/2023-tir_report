@@ -154,7 +154,7 @@ function ParallerCoordinatesChart({
           fontWeight: 400
         },
         layout: 'horizontal',
-        margin: 20,
+        margin: 0,
         verticalAlign: 'top'
       },
       plotOptions: {
@@ -219,7 +219,7 @@ function ParallerCoordinatesChart({
             }
           },
           condition: {
-            maxWidth: 500
+            maxWidth: 450
           }
         }]
       },

@@ -61,7 +61,7 @@ function Figure3() {
         source="UNCTAD"
         subtitle="Countries showing stronger capabilities than their per capita GDPs suggest"
         suffix=""
-        title="The frontier tech overperformers"
+        title="The overperformers on frontier technologies"
         ylabel=""
       />
       )}
