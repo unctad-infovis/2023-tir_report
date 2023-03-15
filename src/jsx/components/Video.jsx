@@ -42,14 +42,15 @@ function Video({ anchorClick }) {
     <div className="video_container">
       <div className="title_container">
         <h4 className="report_title">
-          <div className="big">Review</div>
-          <div>of Maritime</div>
-          <div>Transport</div>
-          <div className="year">2022</div>
+          <div className="">Technology</div>
+          <div>and innovation</div>
+          <div>report</div>
+          <div className="year">2023</div>
         </h4>
         <h4 className="report_headline" ref={reportHeadline}>
-          <div>Navigating</div>
-          <div>stormy waters</div>
+          <div className="big">Opening green windows</div>
+          <div>Technological opportunities</div>
+          <div>for a low-carbon world</div>
         </h4>
         <h4 className="unctad_logo">
           <img src="https://unctad.org/sites/default/files/2022-11/unctad_logo_white.svg" alt="UNCTAD logo" />

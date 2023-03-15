@@ -12,6 +12,9 @@
     height: 100%;
     margin: 0;
     position: relative;
+    video {
+      opacity: 0.9;
+    }
     .title_container {
       align-items: center;
       display: flex;
@@ -21,7 +24,6 @@
       justify-content: center;
       margin: auto auto;
       position: relative;
-      display: none !important;
       h4 {
         font-family: Roboto Condensed, "Helvetica Neue", Helvetica, Arial, sans-serif;
         margin: 0;
@@ -29,19 +31,19 @@
           background-color: rgba(0, 158, 219, 0.5);
           box-sizing: border-box;
           color: #fff;
-          font-size: 46px;
-          font-weight: 400;
-          line-height: 46px;
+          font-size: 70px;
+          font-weight: 600;
+          line-height: 70px;
           overflow: hidden;
-          padding: 10px 60px 10px 60px;
+          padding: 60px 60px 60px 60px;
           position: relative;
-          text-align: center;
+          text-align: left;
           text-transform: uppercase;
           top: 0;
           z-index: 2;
           @media all and (max-width: 767px) {
             font-size: 40px;
-            line-height: 56px;
+            line-height: 40px;
           }
           @media all and (max-width: 700px) {
             font-size: 36px;
@@ -56,9 +58,9 @@
             line-height: 30px;
           }
           .big {
-            font-size: 80px;
+            font-size: 60px;
             font-weight: 600;
-            line-height: 80px;
+            line-height: 60px;
             @media all and (max-width: 767px) {
               font-size: 70px;
               line-height: 70px;
@@ -77,35 +79,33 @@
             }
           }
           .year {
-            border-top: 1px solid #f4f3f3;
-            color: #222;
+            color: #fff;
             display: block;
+            font-size: 80px;
             font-weight: 700;
-            margin-top: 10px;
-            padding-top: 10px;
+            line-height: 80px;
           }
         }
         &.report_headline {
           color: #fff;
-          vertical-align: middle;
           flex-grow: 3;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          font-size: 120px;
-          font-weight: 600;
-          line-height: 120px;
-          margin-top: 20px;
+          font-size: 50px;
+          font-weight: 400;
+          line-height: 50px;
+          margin-top: 40px;
           opacity: 0;
           position: relative;
-          text-align: center;
-          text-shadow: 1px 1px 1px #000;
+          text-align: left;
+          text-shadow: 3px 3px 10px #000;
           transition-duration: 2s;
           transition-property: opacity;
           z-index: 2;
           &.show {
             opacity: 1;
+          }
+          .big {
+            font-weight: bold;
+            margin-bottom: 20px;
           }
           @media all and (max-width: 767px) {
             font-size: 100px;

@@ -161,7 +161,7 @@ function App() {
           </div>
         </div>
         <div className="right_column">
-          <Quote author_name="Rebeca Grynspan" author_title="UNCTAD Secretary-General" first_line="We are at the beginning of a green technological revolution." second_line="Developing countries should act now to catch this wave and grow stronger economies while tackling climate change." />
+          <Quote author_name="Rebeca Grynspan" author_title="UNCTAD Secretary-General" first_line="We are at the beginning of a green technological revolution." second_line="If developing countries act now to catch this wave, they can grow stronger economies while tackling climate change." />
         </div>
       </div>
       <div className="section_wrapper">
@@ -295,7 +295,7 @@ function App() {
                     </p>
                   )}
                 </IsVisible>
-                <p>India performs well for R&D and ICT. This reflects their abundant supplies of qualified and highly skilled human resources available at a comparatively low cost.  </p>
+                <p>India performs well for R&D and ICT. This reflects their abundant supplies of qualified and highly skilled human resources available at a comparatively low cost.</p>
                 <IsVisible once>
                   {(isVisible) => (
                     <p>
@@ -311,11 +311,11 @@ function App() {
               <Figure4 />
             </div>
           </div>
-          <Recommendations headline="UNCTAD calls on governments in developing countries to" recommendation_list={['Invest in more complex and greener sectors through policy instruments such as clusters, smart specialization initiatives and demonstration projects. ', 'Boost technical skills, scale up investments in ICT infrastructure and address connectivity gaps between small and large firms and between urban and rural regions.', 'Build capacities to harness frontier technologies. Otherwise, the green technological revolution will not close but widen global inequalities.']} />
+          <Recommendations headline="UNCTAD calls on governments in developing countries to" recommendation_list={['Invest in more complex and greener sectors through policy instruments such as clusters, smart specialization initiatives and demonstration projects.', 'Boost technical skills, scale up investments in ICT infrastructure and address connectivity gaps between small and large firms and between urban and rural regions.', 'Build capacities to harness frontier technologies. Otherwise, the green technological revolution will not close but widen global inequalities.']} />
         </div>
         {/* Section 4 */}
         <div ref={section4} className="section_4_container">
-          <PhotoHeadline img="2023-tir_report_section_4-min.jpg" max_width={580} text_upper="But developing countries can" text_lower="catch up on frontier technologies" />
+          <PhotoHeadline img="2023-tir_report_section_4-min.jpg" max_width={580} text_upper="Developing countries need" text_lower="better policies and fairer trade rules" />
           <div className="two_column_layout">
             <div className="left_column">
               <div className="text_container">
