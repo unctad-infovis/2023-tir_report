@@ -286,7 +286,8 @@ function ParallerCoordinatesChart({
             fontFamily: 'Roboto',
             fontSize: '14px',
             fontWeight: 400
-          }
+          },
+          y: 10
         },
         lineColor: 'transparent',
         lineWidth: 1,
@@ -307,7 +308,7 @@ function ParallerCoordinatesChart({
             fontFamily: 'Roboto',
             fontSize: '14px',
             fontWeight: 400
-          }
+          },
         },
         max: 166,
         min: 1,

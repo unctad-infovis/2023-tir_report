@@ -310,7 +310,7 @@ function LineChart({
               fontSize: '14px',
               fontWeight: 700
             },
-            text: 'The industrial revolution',
+            text: 'Age of oil, automobile<br />and mass production',
             verticalAlign: 'top',
             x: 5,
             y: 30

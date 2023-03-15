@@ -42,7 +42,7 @@ function Video({ anchorClick }) {
     <div className="video_container">
       <div className="title_container">
         <h4 className="report_title">
-          <div className="">Technology</div>
+          <div>Technology</div>
           <div>and innovation</div>
           <div>report</div>
           <div className="year">2023</div>
