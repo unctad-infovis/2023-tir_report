@@ -25,17 +25,21 @@ function Footer() {
             </div>
             <ul className="hidden">
               <li>
-                <a href="#video" target="_blank" rel="noreferrer">Français</a>
+                <a href="https://youtu.be/wb96xSQvfSU" target="_blank" rel="noreferrer">Français</a>
                 {', '}
-                <a href="#video" target="_blank" rel="noreferrer">Español</a>
+                <a href="https://youtu.be/N0YFDJH6RxI" target="_blank" rel="noreferrer">Español</a>
                 {', '}
-                <a href="#video" target="_blank" rel="noreferrer">العربية</a>
+                <a href="https://youtu.be/SZ-Q4KBMOHc" target="_blank" rel="noreferrer">العربية</a>
                 {', '}
-                <a href="#video" target="_blank" rel="noreferrer">简体中文</a>
+                <a href="https://youtu.be/mORIGqe6GiI" target="_blank" rel="noreferrer">简体中文</a>
                 {', '}
-                <a href="#video" target="_blank" rel="noreferrer">Русский</a>
+                <a href="https://youtu.be/eUXNPr_F0tU" target="_blank" rel="noreferrer">Русский</a>
                 {', '}
-                <a href="#video" target="_blank" rel="noreferrer">Português</a>
+                <a href="https://youtu.be/CgcFhjszL3g" target="_blank" rel="noreferrer">Português</a>
+                {', '}
+                <a href="https://youtu.be/AmWLHHtkD8E" target="_blank" rel="noreferrer">हिंदी</a>
+                {', '}
+                <a href="https://youtu.be/lFkXI4Lfpfs" target="_blank" rel="noreferrer">Kiswahili</a>
               </li>
             </ul>
           </div>
@@ -58,28 +62,32 @@ function Footer() {
                 </div>
               </li>
             </ul>
-            <ul className="hidden">
+            <ul>
               <li>
                 <h4>Download the report video</h4>
                 <ul>
                   <li>
                     <a href="https://vimeo.com/808464387" target="_blank" rel="noreferrer">English</a>
                     {', '}
-                    <a href="#video" target="_blank" rel="noreferrer">Français</a>
+                    <a href="https://vimeo.com/808616703" target="_blank" rel="noreferrer">Français</a>
                     {', '}
-                    <a href="#video" target="_blank" rel="noreferrer">Español</a>
+                    <a href="https://vimeo.com/808616962" target="_blank" rel="noreferrer">Español</a>
                     {', '}
-                    <a href="#video" target="_blank" rel="noreferrer">العربية</a>
+                    <a href="https://vimeo.com/808617024" target="_blank" rel="noreferrer">العربية</a>
                     {', '}
-                    <a href="#video" target="_blank" rel="noreferrer">简体中文</a>
+                    <a href="https://vimeo.com/808616649" target="_blank" rel="noreferrer">简体中文</a>
                     {', '}
-                    <a href="#video" target="_blank" rel="noreferrer">Русский</a>
+                    <a href="https://vimeo.com/808616903" target="_blank" rel="noreferrer">Русский</a>
                     {', '}
-                    <a href="#video" target="_blank" rel="noreferrer">Português</a>
+                    <a href="https://vimeo.com/808616846" target="_blank" rel="noreferrer">Português</a>
+                    {', '}
+                    <a href="https://vimeo.com/808616749" target="_blank" rel="noreferrer">हिंदी</a>
+                    {', '}
+                    <a href="https://vimeo.com/808616788" target="_blank" rel="noreferrer">Kiswahili</a>
                   </li>
                 </ul>
               </li>
-              <li>
+              <li className="hidden">
                 <h4>Read the global press release</h4>
                 <ul>
                   <li>
