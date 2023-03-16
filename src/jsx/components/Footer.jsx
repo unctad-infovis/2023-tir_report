@@ -23,7 +23,7 @@ function Footer() {
             <div className="iframe_container youtube_iframe">
               <iframe src="https://www.youtube.com/embed/w1i5vownQzI" title="Technology and Innovation Report 2023" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
             </div>
-            <ul className="hidden">
+            <ul>
               <li>
                 <a href="https://youtu.be/wb96xSQvfSU" target="_blank" rel="noreferrer">Français</a>
                 {', '}
