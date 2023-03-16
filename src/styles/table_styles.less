@@ -1,4 +1,5 @@
 .table_container {
+  margin: auto auto 20px auto;
   opacity: 0;
   transition-duration: 1000ms;
   transition-property: opacity;
@@ -15,9 +16,9 @@
   }
   table {
     border-spacing: 0;
-    display: block;
     margin: auto auto 5px auto;
     overflow-x: auto;
+    width: 100%;
     thead {
       tr {
         th {
@@ -132,6 +133,8 @@
     display: none;
     margin-bottom: 5px;
     button {
+      border-radius: 2px;
+      border: 1px solid #999;
       cursor: pointer;
       font-size: 16px;
       height: 28px;
@@ -145,6 +148,20 @@
       }
       &.left {
         letter-spacing: -0.2em;
+      }
+      &:disabled {
+        background-color: rgba(239, 239, 239, 0.3);
+        border-color: rgba(118, 118, 118, 0.3);
+        color: rgba(16, 16, 16, 0.3);
+        &:hover {
+          background-color: rgba(239, 239, 239, 0.3);
+          color: rgba(16, 16, 16, 0.3);
+          cursor: default;
+        }
+      }
+      &:hover {
+        background-color: @unblue;
+        color: #fff;
       }
     }
   }
