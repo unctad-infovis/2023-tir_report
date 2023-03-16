@@ -14,7 +14,7 @@ function Video({ anchorClick }) {
     videoRef.current.src = (window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2023-tir_report/assets/vid/' : './assets/vid/') + ((videoRef.current.offsetWidth < 768) ? '2023-tir_report_video.mp4' : '2023-tir_report_video.mp4');
     mp4Ref.current.src = (window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2023-tir_report/assets/vid/' : './assets/vid/') + ((videoRef.current.offsetWidth < 768) ? '2023-tir_report_video.mp4' : '2023-tir_report_video.mp4');
     webmRef.current.src = (window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2023-tir_report/assets/vid/' : './assets/vid/') + ((videoRef.current.offsetWidth < 768) ? '2023-tir_report_video.webm' : '2023-tir_report_video.webm');
-    videoRef.current.poster = (window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2023-tir_report/assets/img/' : './assets/img/') + ((videoRef.current.offsetWidth < 768) ? '2023-tir_report_video.png' : '2023-tir_report_video.png');
+    videoRef.current.poster = (window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2023-tir_report/assets/img/' : './assets/img/') + ((videoRef.current.offsetWidth < 768) ? '2023-tir_report_video-min.jpeg' : '2023-tir_report_video-min.jpeg');
     if (!videoRef.current.playing) {
       videoRef.current.play();
       const interval = setInterval(() => {

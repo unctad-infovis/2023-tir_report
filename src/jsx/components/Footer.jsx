@@ -21,9 +21,9 @@ function Footer() {
           <div className="footer_content">
             <h3>Watch the video</h3>
             <div className="iframe_container youtube_iframe">
-              <iframe src="" title="UNCTAD’s Review of Trade and Innovation 2023" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+              <iframe src="https://www.youtube.com/embed/w1i5vownQzI" title="Technology and Innovation Report 2023" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
             </div>
-            <ul>
+            <ul className="hidden">
               <li>
                 <a href="#video" target="_blank" rel="noreferrer">Français</a>
                 {', '}
@@ -49,21 +49,21 @@ function Footer() {
         </div>
         <div className="footer_element footer_element_2">
           <div className="footer_content anchor_press">
-            <h3>Press material</h3>
-            <ul>
+            <h3 className="hidden">Press material</h3>
+            <ul className="hidden">
               <li>
                 <h4>Press conference</h4>
                 <div className="iframe_container youtube_iframe">
-                  <iframe src="" title="UNCTAD’s Review of Trade and Innovation 2023: press conference" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                  <iframe src="" title="Technology and Innovation Report 2023: press conference" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
                 </div>
               </li>
             </ul>
-            <ul>
+            <ul className="hidden">
               <li>
                 <h4>Download the report video</h4>
                 <ul>
                   <li>
-                    <a href="#video" target="_blank" rel="noreferrer">English</a>
+                    <a href="https://vimeo.com/808464387" target="_blank" rel="noreferrer">English</a>
                     {', '}
                     <a href="#video" target="_blank" rel="noreferrer">Français</a>
                     {', '}
