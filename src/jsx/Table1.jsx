@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../styles/styles.less';
 
+// https://www.npmjs.com/package/react-is-visible
+import 'intersection-observer';
+import { useIsVisible } from 'react-is-visible';
+
 // Load helpers.
 import Table from './components/Table.jsx';
 import { getData } from './helpers/GetTableData.js';
@@ -30,7 +34,8 @@ function App() {
   const [columnData, setColumnData] = useState([]);
   const [rowData, setRowData] = useState([]);
 
-  const appRef = useRef();
+  const chartRef = useRef();
+  const isVisible = useIsVisible(chartRef, { once: true });
 
   const renderRowSubComponent = React.useCallback(({ row }) => (
     <div className="sub_component">
@@ -100,15 +105,23 @@ function App() {
         3: row[columns[3]],
         4: row
       }));
-      appRef.current.querySelector('.loading_row').style.display = 'none';
-      appRef.current.querySelector('.pagination').style.display = 'block';
-      appRef.current.querySelector('.caption').style.display = 'block';
+      chartRef.current.querySelector('.loading_row').style.display = 'none';
+      chartRef.current.querySelector('.pagination').style.display = 'block';
+      chartRef.current.querySelector('.caption').style.display = 'block';
       setRowData(rows);
     });
   }, []);
 
+  useEffect(() => {
+    if (isVisible === true) {
+      setTimeout(() => {
+        chartRef.current.querySelector('.table_container').style.opacity = 1;
+      }, 300);
+    }
+  }, [isVisible]);
+
   return (
-    <div className="app" ref={appRef}>
+    <div className="app" ref={chartRef}>
       <div className="table_container">
         <h3>Frontier technologies readiness index</h3>
         <p>A ranking of 166 countries’ readiness to use frontier technologies</p>
