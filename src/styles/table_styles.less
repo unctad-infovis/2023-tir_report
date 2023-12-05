@@ -8,6 +8,7 @@
     display: inline-block;
     font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 30px;
+    font-weight: 600;
     margin: 0 0 5px 0;
     text-align: left;
   }
@@ -21,6 +22,9 @@
     width: 100%;
     thead {
       tr {
+        &.row {
+          display: table-row;
+        }
         th {
           font-size: 16px;
           font-weight: 700;
@@ -89,8 +93,11 @@
     tbody {
       tr {
         &.row {
+          display: table-row;
           td {
+            max-width: auto;
             padding: 5px;
+            width: auto;
           }
           &:before,
           &:after {
@@ -111,6 +118,7 @@
             background-color: #f7f7f7;
             h4 {
               font-size: 16px;
+              font-weight: 600;
               margin: 0 0 10px 0;
             }
             .label {
