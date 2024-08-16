@@ -51,6 +51,9 @@ function Table({ columns, data, renderRowSubComponent }) {
         <thead>
           <tr className="search_row">
             <th colSpan={100}>
+              {
+                // eslint-disable-next-line no-use-before-define
+              }
               <Filter
                 preGlobalFilteredRows={preGlobalFilteredRows}
                 globalFilter={globalFilter}
