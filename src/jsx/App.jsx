@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, {
+  useState, useEffect, useRef, useCallback
+} from 'react';
 import '../styles/styles.less';
 
 // https://www.npmjs.com/package/react-is-visible
@@ -23,8 +25,6 @@ import Figure4 from './Figure4.jsx';
 import Table1 from './Table1.jsx';
 
 // const appID = '#app-root-2023-tir_report';
-
-const analytics = window.gtag || undefined;
 
 function App() {
   const appRef = useRef();
@@ -62,54 +62,48 @@ function App() {
     setSection4Progress((offset > section4.current.offsetTop - windowHeight) ? (Math.min(((offset - (section3.current.offsetTop - windowHeight)) / section3.current.offsetHeight) * 100, 100)) : 0);
   }, [offset]);
 
+  const analytics = window.gtag || undefined;
+  const track = useCallback((label_event = false, value_event = false) => {
+    if (typeof analytics !== 'undefined' && label_event !== false && value_event !== false) {
+      analytics('event', 'project_interaction', {
+        label: label_event,
+        project_name: '2023-tir_report',
+        transport_type: 'beacon',
+        value: value_event
+      });
+    }
+  }, [analytics]);
+
   useEffect(() => {
     if (section1Progress === 100 && section1Seen === false) {
       setSection1Seen(true);
-      if (typeof analytics !== 'undefined') {
-        analytics('event', 'Scroll', { event_category: '2023-tir_report', event_label: 'Section 1', transport_type: 'beacon' });
-      }
+      track('Scroll', 'Section 1');
     }
-  }, [section1Progress, section1Seen]);
+  }, [section1Progress, section1Seen, track]);
 
   useEffect(() => {
     if (section2Progress === 100 && section2Seen === false) {
       setSection2Seen(true);
-      if (typeof analytics !== 'undefined') {
-        analytics('event', 'Scroll', { event_category: '2023-tir_report', event_label: 'Section 2', transport_type: 'beacon' });
-      }
+      track('Scroll', 'Section 2');
     }
-  }, [section2Progress, section2Seen]);
+  }, [section2Progress, section2Seen, track]);
 
   useEffect(() => {
     if (section3Progress === 100 && section3Seen === false) {
       setSection3Seen(true);
-      if (typeof analytics !== 'undefined') {
-        analytics('event', 'Scroll', { event_category: '2023-tir_report', event_label: 'Section 3', transport_type: 'beacon' });
-      }
+      track('Scroll', 'Section 3');
     }
-  }, [section3Progress, section3Seen]);
+  }, [section3Progress, section3Seen, track]);
 
   useEffect(() => {
     if (section4Progress === 100 && section4Seen === false) {
       setSection4Seen(true);
-      if (typeof analytics !== 'undefined') {
-        analytics('event', 'Scroll', { event_category: '2023-tir_report', event_label: 'Section 4', transport_type: 'beacon' });
-      }
+      track('Scroll', 'Section 4');
     }
-  }, [section4Progress, section4Seen]);
-
-  const track = (name) => {
-    if (typeof analytics !== 'undefined') {
-      analytics('event', 'Navigation Click', {
-        event_category: '2023-tir_report',
-        event_label: name,
-        transport_type: 'beacon'
-      });
-    }
-  };
+  }, [section4Progress, section4Seen, track]);
 
   const anchorClick = (target, name) => {
-    track(name);
+    track('Navigation Click', name);
     setTimeout(() => {
       scrollIntoView(appRef.current.querySelector(target), {
         align: {

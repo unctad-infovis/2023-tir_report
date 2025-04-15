@@ -1,17 +1,17 @@
-import React, { /* useState,  useEffect, useRef */ memo } from 'react';
-
-const analytics = window.gtag || undefined;
+import React, { /* useState,  useEffect, useRef */ memo, useCallback } from 'react';
 
 function Footer() {
-  const track = (name) => {
-    if (typeof analytics !== 'undefined') {
-      analytics('event', 'Press material', {
-        event_category: '2023-tir_report',
-        event_label: name,
-        transport_type: 'beacon'
+  const analytics = window.gtag || undefined;
+  const track = useCallback((label_event = false, value_event = false) => {
+    if (typeof analytics !== 'undefined' && label_event !== false && value_event !== false) {
+      analytics('event', 'project_interaction', {
+        label: label_event,
+        project_name: '2023-tir_report',
+        transport_type: 'beacon',
+        value: value_event
       });
     }
-  };
+  }, [analytics]);
   return (
     <div className="footer_container">
       <h2>What do you want to do next?</h2>
@@ -91,19 +91,19 @@ function Footer() {
                 <h4>Read the global press release</h4>
                 <ul>
                   <li>
-                    <a href="https://unctad.org/press-material/unctad-calls-coherent-policy-action-enable-developing-countries-benefit-green" onClick={(event) => track(event.target.href)}>English</a>
+                    <a href="https://unctad.org/press-material/unctad-calls-coherent-policy-action-enable-developing-countries-benefit-green" onClick={(event) => track('Anchor', event.target.href)}>English</a>
                     {', '}
-                    <a href="https://unctad.org/fr/press-material/la-cnuced-appelle-des-politiques-coherentes-pour-permettre-aux-pays-en-developpement" onClick={(event) => track(event.target.href)}>Français</a>
+                    <a href="https://unctad.org/fr/press-material/la-cnuced-appelle-des-politiques-coherentes-pour-permettre-aux-pays-en-developpement" onClick={(event) => track('Anchor', event.target.href)}>Français</a>
                     {', '}
-                    <a href="https://unctad.org/es/press-material/la-unctad-pide-coherencia-en-las-politicas-para-que-los-paises-en-desarrollo-puedan" onClick={(event) => track(event.target.href)}>Español</a>
+                    <a href="https://unctad.org/es/press-material/la-unctad-pide-coherencia-en-las-politicas-para-que-los-paises-en-desarrollo-puedan" onClick={(event) => track('Anchor', event.target.href)}>Español</a>
                     {', '}
-                    <a href="https://unctad.org/system/files/press-material/PR23004_TIR23_ar_Rev1.pdf" onClick={(event) => track(event.target.href)}>العربية</a>
+                    <a href="https://unctad.org/system/files/press-material/PR23004_TIR23_ar_Rev1.pdf" onClick={(event) => track('Anchor', event.target.href)}>العربية</a>
                     {', '}
-                    <a href="https://unctad.org/system/files/press-material/PR23004_TIR23_ch_Rev.1_0.pdf" onClick={(event) => track(event.target.href)}>简体中文</a>
+                    <a href="https://unctad.org/system/files/press-material/PR23004_TIR23_ch_Rev.1_0.pdf" onClick={(event) => track('Anchor', event.target.href)}>简体中文</a>
                     {', '}
-                    <a href="https://unctad.org/system/files/press-material/PR23004_TIR23_ru_Rev.1_0.pdf" onClick={(event) => track(event.target.href)}>Русский</a>
+                    <a href="https://unctad.org/system/files/press-material/PR23004_TIR23_ru_Rev.1_0.pdf" onClick={(event) => track('Anchor', event.target.href)}>Русский</a>
                     {', '}
-                    <a href="https://unctad.org/system/files/press-material/PR23004_TIR23_pt_Rev.1.pdf" onClick={(event) => track(event.target.href)}>Português</a>
+                    <a href="https://unctad.org/system/files/press-material/PR23004_TIR23_pt_Rev.1.pdf" onClick={(event) => track('Anchor', event.target.href)}>Português</a>
                   </li>
                 </ul>
               </li>
