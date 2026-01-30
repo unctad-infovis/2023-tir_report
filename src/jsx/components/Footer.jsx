@@ -58,7 +58,7 @@ function Footer() {
               <li>
                 <h4>Press conference</h4>
                 <div className="iframe_container youtube_iframe">
-                  <iframe src="https://www.youtube.com/embed/O1pEfOXWWnE" title="Technology and Innovation Report 2023: press conference" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                  <iframe src="https://www.youtube.com/embed/O1pEfOXWWnE" title="Technology and Innovation Report 2023: press conference" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" />
                 </div>
               </li>
             </ul>
