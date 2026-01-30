@@ -21,7 +21,7 @@ function Footer() {
           <div className="footer_content">
             <h3>Watch the video</h3>
             <div className="iframe_container youtube_iframe">
-              <iframe src="https://www.youtube.com/embed/w1i5vownQzI" title="Technology and Innovation Report 2023" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+              <iframe src="https://www.youtube.com/embed/w1i5vownQzI" title="Technology and Innovation Report 2023" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen allowFullScreen referrerPolicy="strict-origin-when-cross-origin" />
             </div>
             <ul>
               <li>
@@ -47,7 +47,7 @@ function Footer() {
             <h3>Podcast</h3>
             <p>Listen to the Weekly Tradecast episode that explores some of the main issues in the report</p>
             <div className="iframe_container">
-              <iframe title="37. Going green: How technology offers development and climate benefits" height="150" width="100%" style={{ border: 'none', minWidth: 'min(100%, 430px)' }} scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=y46kd-13b94e4-pb&btn-skin=009EDB&download=1&font-color=000000&fonts=Verdana&from=pb6admin&logo_link=none&rtl=0&share=1&size=240&skin=ffffff" allowFullScreen />
+              <iframe title="37. Going green: How technology offers development and climate benefits" height="150" width="100%" style={{ border: 'none', minWidth: 'min(100%, 430px)' }} scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=y46kd-13b94e4-pb&btn-skin=009EDB&download=1&font-color=000000&fonts=Verdana&from=pb6admin&logo_link=none&rtl=0&share=1&size=240&skin=ffffff" allowFullScreen allowFullScreen referrerPolicy="strict-origin-when-cross-origin" />
             </div>
           </div>
         </div>
