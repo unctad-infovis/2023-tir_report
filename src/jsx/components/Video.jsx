@@ -53,7 +53,7 @@ function Video({ anchorClick }) {
           <div>for a low-carbon world</div>
         </h4>
         <h4 className="unctad_logo">
-          <img src="https://unctad.org/sites/default/files/2022-11/unctad_logo_white.svg" alt="UNCTAD logo" />
+          <img src={`${window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2023-tir_report/' : './'}assets/img/unctad_logo_white.svg`} alt="UNCTAD logo" />
         </h4>
         <svg className="arrows" onClick={() => anchorClick('.pagenavigation_container', 'Arrows')}>
           <path className="a1" d="M0 0 L30 32 L60 0" />

@@ -5,7 +5,7 @@ import '../styles/styles.less';
 
 // https://www.npmjs.com/package/react-is-visible
 import 'intersection-observer';
-import IsVisible from 'react-is-visible';
+import { useIsVisible } from 'react-is-visible';
 
 // https://www.npmjs.com/package/scroll-into-view
 import scrollIntoView from 'scroll-into-view';
@@ -46,6 +46,39 @@ function App() {
   const [offset, setOffset] = useState(false);
   // Data states.
   // const [data, setData] = useState(false);
+
+  const highlightRef1 = useRef();
+  const highlightRef2 = useRef();
+  const highlightRef3 = useRef();
+  const highlightRef4 = useRef();
+  const highlightRef5 = useRef();
+  const highlightRef6 = useRef();
+  const highlightRef7 = useRef();
+  const highlightRef8 = useRef();
+  const highlightRef9 = useRef();
+  const highlightRef10 = useRef();
+  const highlightRef11 = useRef();
+  const highlightRef12 = useRef();
+  const highlightRef13 = useRef();
+  const highlightRef14 = useRef();
+  const highlightRef15 = useRef();
+  const highlightRef16 = useRef();
+  const highlightVisible1 = useIsVisible(highlightRef1, { once: true });
+  const highlightVisible2 = useIsVisible(highlightRef2, { once: true });
+  const highlightVisible3 = useIsVisible(highlightRef3, { once: true });
+  const highlightVisible4 = useIsVisible(highlightRef4, { once: true });
+  const highlightVisible5 = useIsVisible(highlightRef5, { once: true });
+  const highlightVisible6 = useIsVisible(highlightRef6, { once: true });
+  const highlightVisible7 = useIsVisible(highlightRef7, { once: true });
+  const highlightVisible8 = useIsVisible(highlightRef8, { once: true });
+  const highlightVisible9 = useIsVisible(highlightRef9, { once: true });
+  const highlightVisible10 = useIsVisible(highlightRef10, { once: true });
+  const highlightVisible11 = useIsVisible(highlightRef11, { once: true });
+  const highlightVisible12 = useIsVisible(highlightRef12, { once: true });
+  const highlightVisible13 = useIsVisible(highlightRef13, { once: true });
+  const highlightVisible14 = useIsVisible(highlightRef14, { once: true });
+  const highlightVisible15 = useIsVisible(highlightRef15, { once: true });
+  const highlightVisible16 = useIsVisible(highlightRef16, { once: true });
 
   useEffect(() => {
     const onScroll = () => setOffset(window.pageYOffset);
@@ -131,26 +164,18 @@ function App() {
               The Technology and Innovation Report 2023 highlights the opportunities that green innovation – goods and services with smaller carbon footprints – offer developing countries to spur economic growth and enhance technological capacities.
             </p>
             <p className="ingress">The report analyses the market size of 17 green and frontier technologies, such as artificial intelligence, the Internet of Things and electric vehicles, and their potential to create jobs.</p>
-            <IsVisible once>
-              {(isVisible) => (
-                <p className="ingress">
-                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>Now is the time for developing countries to capture more of the value being created in this green tech revolution</span>
-                  {' '}
-                  – and use it to grow their economies, make them more resilient to shocks and reduce inequalities.
-                </p>
-              )}
-            </IsVisible>
-            <IsVisible once>
-              {(isVisible) => (
-                <p className="ingress">
-                  UNCTAD calls on their governments and business communities to
-                  {' '}
-                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>invest in more complex and greener sectors, boost technical skills and scale up investments</span>
-                  {' '}
-                  in the technology infrastructure needed to grow green industries.
-                </p>
-              )}
-            </IsVisible>
+            <p className="ingress" ref={highlightRef1}>
+              <span className={`highlight ${(highlightVisible1) ? 'visible' : ''}`}>Now is the time for developing countries to capture more of the value being created in this green tech revolution</span>
+              {' '}
+              – and use it to grow their economies, make them more resilient to shocks and reduce inequalities.
+            </p>
+            <p className="ingress" ref={highlightRef2}>
+              UNCTAD calls on their governments and business communities to
+              {' '}
+              <span className={`highlight ${(highlightVisible2) ? 'visible' : ''}`}>invest in more complex and greener sectors, boost technical skills and scale up investments</span>
+              {' '}
+              in the technology infrastructure needed to grow green industries.
+            </p>
             <p className="ingress">To support this evolution, the report urges the international community to make global trade rules more supportive of emerging green industries in developing economies and reform intellectual property rights to facilitate technology transfer to these countries.</p>
           </div>
         </div>
@@ -166,43 +191,27 @@ function App() {
           <div className="two_column_layout">
             <div className="left_column">
               <div className="text_container">
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      We are at the beginning of a technological revolution based on green and Industry 4.0 technologies – and developing countries must catch the wave early. As shown in previous technological revolutions,
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>early adopters can move ahead quicker and reap the advantages for longer.</span>
-                    </p>
-                  )}
-                </IsVisible>
+                <p ref={highlightRef3}>
+                  We are at the beginning of a technological revolution based on green and Industry 4.0 technologies – and developing countries must catch the wave early. As shown in previous technological revolutions,
+                  {' '}
+                  <span className={`highlight ${(highlightVisible3) ? 'visible' : ''}`}>early adopters can move ahead quicker and reap the advantages for longer.</span>
+                </p>
                 <p>Now is the moment for developing countries to take advantage of the high increases in productivity associated with this new technological revolution and catch up economically, while helping to protect the planet.</p>
                 <p>Missing this green technological wave because of insufficient policy attention or a lack of investment targeted at building skills and capacities would have long-lasting negative consequences.</p>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>The 17 frontier technologies covered in the report</span>
-                      {' '}
-                      such as artificial intelligence, Internet of Things and green hydrogen already represent a $1.5 trillion market, which could grow to over $9.5 trillion by 2030 – about three times the current size of the Indian economy.
-                    </p>
-                  )}
-                </IsVisible>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>But so far, developed economies are seizing most of the opportunities</span>
-                      , leaving developing economies further behind.
-                    </p>
-                  )}
-                </IsVisible>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      The total exports of green technologies from developed countries jumped from around $60 billion in 2018 to over $156 billion in 2021. In the same period, exports from developing nations rose from a similar starting line of $57 billion to only about $75 billion.
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>In three years, developing countries’ share of global exports has fallen from over 48% to under 33%.</span>
-                    </p>
-                  )}
-                </IsVisible>
+                <p ref={highlightRef4}>
+                  <span className={`highlight ${(highlightVisible4) ? 'visible' : ''}`}>The 17 frontier technologies covered in the report</span>
+                  {' '}
+                  such as artificial intelligence, Internet of Things and green hydrogen already represent a $1.5 trillion market, which could grow to over $9.5 trillion by 2030 – about three times the current size of the Indian economy.
+                </p>
+                <p ref={highlightRef5}>
+                  <span className={`highlight ${(highlightVisible5) ? 'visible' : ''}`}>But so far, developed economies are seizing most of the opportunities</span>
+                  , leaving developing economies further behind.
+                </p>
+                <p ref={highlightRef6}>
+                  The total exports of green technologies from developed countries jumped from around $60 billion in 2018 to over $156 billion in 2021. In the same period, exports from developing nations rose from a similar starting line of $57 billion to only about $75 billion.
+                  {' '}
+                  <span className={`highlight ${(highlightVisible6) ? 'visible' : ''}`}>In three years, developing countries’ share of global exports has fallen from over 48% to under 33%.</span>
+                </p>
               </div>
             </div>
             <div className="right_column">
@@ -218,33 +227,21 @@ function App() {
             <div className="left_column">
               <div className="text_container">
                 <p>Frontier technologies can increase productivity and improve livelihoods. For example, artificial intelligence combined with robotics can transform production systems, while 3D printing allows faster and cheaper low-volume manufacturing.</p>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>But few developing countries have the capacities needed to take advantage of frontier technologies</span>
-                      , which rely on digitalization and connectivity. They include blockchain, drones, gene editing, nanotechnology and solar power.
-                    </p>
-                  )}
-                </IsVisible>
+                <p ref={highlightRef7}>
+                  <span className={`highlight ${(highlightVisible7) ? 'visible' : ''}`}>But few developing countries have the capacities needed to take advantage of frontier technologies</span>
+                  , which rely on digitalization and connectivity. They include blockchain, drones, gene editing, nanotechnology and solar power.
+                </p>
                 <p>The report assesses countries’ preparedness for frontier technologies. It presents a “readiness index” ranking 166 countries based on five “building blocks”: ICT deployment, skills, research and development (R&D) activity, industry activity and access to finance.</p>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>The index shows that countries in Latin America, the Caribbean and sub-Saharan Africa are the least ready</span>
-                      {' '}
-                      to use, adopt or adapt to frontier technologies and are at risk of missing current technological opportunities.
-                    </p>
-                  )}
-                </IsVisible>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      In general, those most ready are high-income economies, notably the United States, Sweden, Singapore, Switzerland and the Netherlands.
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>China, the most-ready developing country, ranked 35, followed by Brazil (40), India (46) and South Africa (56).</span>
-                    </p>
-                  )}
-                </IsVisible>
+                <p ref={highlightRef8}>
+                  <span className={`highlight ${(highlightVisible8) ? 'visible' : ''}`}>The index shows that countries in Latin America, the Caribbean and sub-Saharan Africa are the least ready</span>
+                  {' '}
+                  to use, adopt or adapt to frontier technologies and are at risk of missing current technological opportunities.
+                </p>
+                <p ref={highlightRef9}>
+                  In general, those most ready are high-income economies, notably the United States, Sweden, Singapore, Switzerland and the Netherlands.
+                  {' '}
+                  <span className={`highlight ${(highlightVisible9) ? 'visible' : ''}`}>China, the most-ready developing country, ranked 35, followed by Brazil (40), India (46) and South Africa (56).</span>
+                </p>
                 <p>China&apos;s lower-than-expected position, when compared to its capacities to produce and innovate in frontier technologies, is due primarily to urban-rural disparities in internet coverage and broadband speed.</p>
               </div>
             </div>
@@ -259,46 +256,30 @@ function App() {
           <div className="two_column_layout">
             <div className="left_column">
               <div className="text_container">
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      The report highlights that
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>developing countries can use frontier technologies to leapfrog previous innovations</span>
-                      {' '}
-                      and quickly move ahead, providing examples of those already doing so.
-                    </p>
-                  )}
-                </IsVisible>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      The readiness index shows, for example, that
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>some developing countries in Asia – notably India, the Philippines and Viet Nam – are performing better than expected.</span>
-                    </p>
-                  )}
-                </IsVisible>
+                <p ref={highlightRef10}>
+                  The report highlights that
+                  {' '}
+                  <span className={`highlight ${(highlightVisible10) ? 'visible' : ''}`}>developing countries can use frontier technologies to leapfrog previous innovations</span>
+                  {' '}
+                  and quickly move ahead, providing examples of those already doing so.
+                </p>
+                <p ref={highlightRef11}>
+                  The readiness index shows, for example, that
+                  {' '}
+                  <span className={`highlight ${(highlightVisible11) ? 'visible' : ''}`}>some developing countries in Asia – notably India, the Philippines and Viet Nam – are performing better than expected.</span>
+                </p>
                 <p>Their overperformance is measured as the difference between the actual index rankings and the projected rankings based on per capita income. In general, it results from increased investment in infrastructure, enhanced technical skills and a conducive business climate.</p>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>India remains the greatest overperformer</span>
-                      {' '}
-                      ranking at 67 positions better than expected, followed by the Philippines (54 positions better) and Viet Nam (44 better).
-                    </p>
-                  )}
-                </IsVisible>
+                <p ref={highlightRef12}>
+                  <span className={`highlight ${(highlightVisible12) ? 'visible' : ''}`}>India remains the greatest overperformer</span>
+                  {' '}
+                  ranking at 67 positions better than expected, followed by the Philippines (54 positions better) and Viet Nam (44 better).
+                </p>
                 <p>India performs well for R&D and ICT. This reflects their abundant supplies of qualified and highly skilled human resources available at a comparatively low cost.</p>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>The Philippines and Viet Nam have a high ranking for industry.</span>
-                      {' '}
-                      This reflects high levels of foreign direct investment in high-technology manufacturing, particularly electronics.
-                    </p>
-                  )}
-                </IsVisible>
+                <p ref={highlightRef13}>
+                  <span className={`highlight ${(highlightVisible13) ? 'visible' : ''}`}>The Philippines and Viet Nam have a high ranking for industry.</span>
+                  {' '}
+                  This reflects high levels of foreign direct investment in high-technology manufacturing, particularly electronics.
+                </p>
               </div>
             </div>
             <div className="right_column">
@@ -313,38 +294,26 @@ function App() {
           <div className="two_column_layout">
             <div className="left_column">
               <div className="text_container">
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      Green innovation opportunities are time-bound and
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>can only be seized through changes in policy</span>
-                      , without which the windows may close.
-                    </p>
-                  )}
-                </IsVisible>
+                <p ref={highlightRef14}>
+                  Green innovation opportunities are time-bound and
+                  {' '}
+                  <span className={`highlight ${(highlightVisible14) ? 'visible' : ''}`}>can only be seized through changes in policy</span>
+                  , without which the windows may close.
+                </p>
                 <p>Countries that have taken advantage of the opportunities, such as Brazil and China, have done so through strong responses that include government policies, like China’s 2006 renewable energy law that stimulated the initial development of the biomass industry. It was supported by solar energy subsidies, demonstration programmes and private sector initiatives.</p>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      If developing countries are to capture the economic gains associated with new technologies,
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>their firms must have the required capabilities.</span>
-                      {' '}
-                      This includes not just scientific or technical skills but also the necessary policies, regulations and infrastructure.
-                    </p>
-                  )}
-                </IsVisible>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      But developing countries can’t take advantage of green windows of opportunity on their own.
-                      {' '}
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>They need an enabling international economy</span>
-                      , in which trade rules are consistent with the Paris Agreement on climate change. Otherwise, new green sectors will struggle to emerge and grow in developing economies, and cleaner and more productive production will remain out of their reach.
-                    </p>
-                  )}
-                </IsVisible>
+                <p ref={highlightRef15}>
+                  If developing countries are to capture the economic gains associated with new technologies,
+                  {' '}
+                  <span className={`highlight ${(highlightVisible15) ? 'visible' : ''}`}>their firms must have the required capabilities.</span>
+                  {' '}
+                  This includes not just scientific or technical skills but also the necessary policies, regulations and infrastructure.
+                </p>
+                <p ref={highlightRef16}>
+                  But developing countries can’t take advantage of green windows of opportunity on their own.
+                  {' '}
+                  <span className={`highlight ${(highlightVisible16) ? 'visible' : ''}`}>They need an enabling international economy</span>
+                  , in which trade rules are consistent with the Paris Agreement on climate change. Otherwise, new green sectors will struggle to emerge and grow in developing economies, and cleaner and more productive production will remain out of their reach.
+                </p>
               </div>
             </div>
             <div className="right_column">
