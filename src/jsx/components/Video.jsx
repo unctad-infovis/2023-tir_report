@@ -75,8 +75,4 @@ Video.propTypes = {
   anchorClick: PropTypes.instanceOf(Function).isRequired
 };
 
-Video.defaultProps = {
-
-};
-
 export default Video;

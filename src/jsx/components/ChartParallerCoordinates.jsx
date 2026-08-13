@@ -51,7 +51,7 @@ Highcharts.SVGRenderer.prototype.symbols.download = (x, y, w, h) => {
 };
 
 function ParallerCoordinatesChart({
-  data, idx, note, source, subtitle, title, xlabel
+  data, idx, note = false, source, subtitle = false, title, xlabel = 'Year'
 }) {
   const chartRef = useRef();
 
@@ -421,12 +421,6 @@ ParallerCoordinatesChart.propTypes = {
   subtitle: PropTypes.string,
   title: PropTypes.string.isRequired,
   xlabel: PropTypes.string,
-};
-
-ParallerCoordinatesChart.defaultProps = {
-  note: false,
-  subtitle: false,
-  xlabel: 'Year'
 };
 
 export default memo(ParallerCoordinatesChart);
